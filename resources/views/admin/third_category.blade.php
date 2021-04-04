@@ -19,6 +19,15 @@
 
     <!-- Main content -->
     <div class="content">
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
@@ -28,6 +37,7 @@
                         <tr>
                           <th style="width: 5%">#</th>
                             <th class="th-sm">Name</th>
+                            <th class="th-sm">Slug</th>
                             <th class="th-sm">Parent Category</th>
                             <th class="th-sm" >Image</th>
                             <th class="th-sm" style="width: 200px">Action</th>
@@ -38,10 +48,11 @@
                      <tr>
                      	<td>{{$key+1}}</td>
                      	<td>{{$record->name}}</td>
+                     	<td>{{$record->slug}}</td>
                       <td>{{$record->parent_category->name}}</td>
                      	<td><img style="width:100px;height:100px;overflow: hidden; object-fit: cover;" src="{{URL($record->image)}}"></td>
                      	<td>
-                     		<button class="btn btn-primary edit_category" name="{{$record->name}}" this_category_id="{{$record->id}}" parent_category_id="{{$record->parent_category_id}}"><i class="fas fa-edit"></i></button><a href="{{URL('admin/delete_sub_category/'.$record->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                     		<button class="btn btn-primary edit_category" name="{{$record->name}}" slug="{{$record->slug}}" this_category_id="{{$record->id}}" parent_category_id="{{$record->parent_category_id}}"><i class="fas fa-edit"></i></button><a href="{{URL('admin/delete_sub_category/'.$record->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                      	</td>
                      </tr>
                      @endforeach
@@ -79,6 +90,10 @@
                   <div class="form-group">
                     <label for="exampleInputEmail1">Third Category Name</label>
                     <input type="text" class="form-control" name="name"  placeholder="Sub category name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Third Category Slug</label>
+                    <input type="text" class="form-control" name="slug"  placeholder="Sub category Slug" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Third Category Image</label>
@@ -125,6 +140,10 @@
                   <div class="form-group">
                     <label for="exampleInputEmail1">Sub Category Name</label>
                     <input type="text" class="form-control" name="name" id="edit_name"  placeholder="Category name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Third Category Slug</label>
+                    <input type="text" class="form-control" name="slug" id="edit_slug"  placeholder="Sub category slug" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Sub Category Image</label>
@@ -243,6 +262,7 @@
     $( ".edit_category" ).click(function() {
     	$('#this_category_id').val($(this).attr('this_category_id'))
       $('#edit_name').val($(this).attr('name'))
+      $('#edit_slug').val($(this).attr('slug'))
     	$('#edit_parent_category_id').val($(this).attr('parent_category_id'))
     	$('#edit_category').modal('show')
 });

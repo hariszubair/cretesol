@@ -13,6 +13,7 @@ class Product extends Model
     	'sub_category_id',
     	'third_category_id',
      	'name',
+         'slug',
      	'image'
      ];
      public function category(){

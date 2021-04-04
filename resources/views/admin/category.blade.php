@@ -3,6 +3,7 @@
 
 @section('content')
 <meta name="csrf-token" content="{{ csrf_token() }}">
+
 <div class="content-wrapper" >
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -19,15 +20,26 @@
 
     <!-- Main content -->
     <div class="content">
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
+       
 			<div class="card-body">
                <table id="category" class="table table-bordered" width="100%" style="font-size: 12px">
                     <thead>
                         <tr>
                           <th style="width: 5%">#</th>
                             <th class="th-sm">Name</th>
+                            <th class="th-sm">Slug</th>
                             <th class="th-sm" >Image</th>
                             <th class="th-sm" style="width: 200px">Action</th>
                         </tr>
@@ -37,9 +49,10 @@
                      <tr>
                      	<td>{{$key+1}}</td>
                      	<td>{{$record->name}}</td>
+                     	<td>{{$record->slug}}</td>
                      	<td><img style="width:100px;height:100px;overflow: hidden; object-fit: cover;" src="{{URL($record->image)}}"></td>
                      	<td>
-                     		<button class="btn btn-primary edit_category" name="{{$record->name}}" category_id="{{$record->id}}"><i class="fas fa-edit"></i></button><a href="{{URL('admin/delete_category/'.$record->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                     		<button class="btn btn-primary edit_category" name="{{$record->name}}" slug="{{$record->slug}}" category_id="{{$record->id}}"><i class="fas fa-edit"></i></button><a href="{{URL('admin/delete_category/'.$record->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                      	</td>
                      </tr>
                      @endforeach
@@ -68,6 +81,10 @@
                   <div class="form-group">
                     <label for="exampleInputEmail1">Category Name</label>
                     <input type="text" class="form-control" name="name"  placeholder="Category name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Category Slug</label>
+                    <input type="text" class="form-control slug" name="slug"  placeholder="Category slug" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Category Image</label>
@@ -106,6 +123,10 @@
                   <div class="form-group">
                     <label for="exampleInputEmail1">Category Name</label>
                     <input type="text" class="form-control" name="name" id="edit_name"  placeholder="Category name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Category Slug</label>
+                    <input type="text" class="form-control slug" name="slug" id="edit_slug"  placeholder="Category name" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Category Image</label>
@@ -223,8 +244,12 @@
     }
     $( ".edit_category" ).click(function() {
     	$('#edit_name').val($(this).attr('name'))
+    	$('#edit_slug').val($(this).attr('slug'))
     	$('#category_id').val($(this).attr('category_id'))
     	$('#edit_category').modal('show')
 });
+$('.slug').on('input',function(event) {
+  this.value = this.value.replace(/[^a-z\-]+/g, "");
+    });
 </script>
 @endsection

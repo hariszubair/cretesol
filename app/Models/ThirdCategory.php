@@ -11,6 +11,7 @@ class ThirdCategory extends Model
      protected $fillable =[
      	'name',
      	'image',
+         'slug',
      	'parent_category_id'
      ];
      public function parent_category(){

@@ -27,11 +27,16 @@ class CategoryController extends Controller
     // }
     public function add_category(Request $request)
     {
+        $validated = $request->validate([
+            'slug' => 'required|unique:categories,slug',
+            'name' => 'required|unique:categories,name',
+
+        ]);
     	     $input=$request->all();
        if($file = $request->file('category_image')){
             $name_array=array_map('strrev', explode('.', strrev($file->getClientOriginalName())));   
             $name= time().'.'.$name_array[0];
-            $file->move(public_path('images\\assets\\'), $name);
+            $file->move(public_path('images/assets'), $name);
             $input['image']='/images/assets/'.$name;
         }
         Category::create($input);
@@ -40,6 +45,11 @@ class CategoryController extends Controller
      public function edit_category(Request $request)
     {
     	$cat= Category::find($request->id);
+        $validated = $request->validate([
+            'slug' => 'required|unique:categories,slug,'.$cat->id,
+            'name' => 'required|unique:categories,name,'.$cat->id,
+
+        ]);
     	$input=[];
        if($file = $request->file('category_image')){
        		if(file_exists(public_path($cat->image))) {
@@ -47,10 +57,11 @@ class CategoryController extends Controller
         }
             $name_array=array_map('strrev', explode('.', strrev($file->getClientOriginalName())));   
             $name= time().'.'.$name_array[0];
-            $file->move(public_path('images\\assets\\'), $name);
+            $file->move(public_path('images/assets'), $name);
             $input['image']='/images/assets/'.$name;
         }
         $input['name']=$request->name;
+        $input['slug']=$request->slug;
         Category::where('id',$request->id)->update($input);
         return redirect()->back();
     }	

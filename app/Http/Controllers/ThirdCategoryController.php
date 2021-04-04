@@ -20,11 +20,15 @@ class ThirdCategoryController extends Controller
     }
     public function add_third_category(Request $request)
     {
+        $validated = $request->validate([
+            'slug' => 'required|unique:third_categories,slug',
+
+        ]);
     	     $input=$request->all();
        if($file = $request->file('sub_category_image')){
             $name_array=array_map('strrev', explode('.', strrev($file->getClientOriginalName())));   
             $name= time().'.'.$name_array[0];
-            $file->move(public_path('images\\assets\\'), $name);
+            $file->move(public_path('images/assets/'), $name);
             $input['image']='/images/assets/'.$name;
         }
         ThirdCategory::create($input);
@@ -32,7 +36,12 @@ class ThirdCategoryController extends Controller
     }
     public function edit_third_category(Request $request)
     {
-    	 $cat= SubCategory::find($request->category_id);
+    	 $cat= ThirdCategory::find($request->id);
+
+        $validated = $request->validate([
+            'slug' => 'required|unique:third_categories,slug,'.$cat->id,
+
+        ]);
     	$input=[];
        if($file = $request->file('category_image')){
        		if(file_exists(public_path($cat->image))) {
@@ -40,10 +49,11 @@ class ThirdCategoryController extends Controller
         }
             $name_array=array_map('strrev', explode('.', strrev($file->getClientOriginalName())));   
             $name= time().'.'.$name_array[0];
-            $file->move(public_path('images\\assets\\'), $name);
+            $file->move(public_path('imagesassets//'), $name);
             $input['image']='/images/assets/'.$name;
         }
         $input['name']=$request->name;
+        $input['slug']=$request->slug;
         $input['parent_category_id']=$request->category_id;
         // return $input;
         ThirdCategory::where('id',$request->id)->update($input);

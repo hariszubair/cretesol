@@ -20,11 +20,15 @@ class SubCategoryController extends Controller
     }
     public function add_sub_category(Request $request)
     {
+        $validated = $request->validate([
+            'slug' => 'required|unique:sub_categories,slug',
+
+        ]);
     	     $input=$request->all();
        if($file = $request->file('sub_category_image')){
             $name_array=array_map('strrev', explode('.', strrev($file->getClientOriginalName())));   
             $name= time().'.'.$name_array[0];
-            $file->move(public_path('images\\assets\\'), $name);
+            $file->move(public_path('images/assets'), $name);
             $input['image']='/images/assets/'.$name;
         }
         SubCategory::create($input);
@@ -32,7 +36,10 @@ class SubCategoryController extends Controller
     }
     public function edit_sub_category(Request $request)
     {
-    	$cat= Category::find($request->category_id);
+    	$cat= SubCategory::find($request->id);
+        $validated = $request->validate([
+            'slug' => 'required|unique:sub_categories,slug,'.$cat->id,
+        ]);
     	$input=[];
        if($file = $request->file('category_image')){
        		if(file_exists(public_path($cat->image))) {
@@ -40,10 +47,11 @@ class SubCategoryController extends Controller
         }
             $name_array=array_map('strrev', explode('.', strrev($file->getClientOriginalName())));   
             $name= time().'.'.$name_array[0];
-            $file->move(public_path('images\\assets\\'), $name);
+            $file->move(public_path('images/assets'), $name);
             $input['image']='/images/assets/'.$name;
         }
         $input['name']=$request->name;
+        $input['slug']=$request->slug;
         $input['category_id']=$request->category_id;
         // return $input;
         SubCategory::where('id',$request->id)->update($input);

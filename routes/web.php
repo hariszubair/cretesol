@@ -25,6 +25,9 @@ Route::get('/tiles', [App\Http\Controllers\HomeController::class, 'tiles'])->nam
 Route::get('/stones', [App\Http\Controllers\HomeController::class, 'stones'])->name('stones');
 Route::get('/mosaic', [App\Http\Controllers\HomeController::class, 'mosaic'])->name('mosaic');
 Route::get('/category/{id}', [App\Http\Controllers\HomeController::class, 'category'])->name('category');
+Route::get('/sub_category/{id}', [App\Http\Controllers\HomeController::class, 'sub_category'])->name('sub_category');
+Route::get('/third_category/{id}', [App\Http\Controllers\HomeController::class, 'third_category'])->name('third_category');
+Route::get('/product/{id}', [App\Http\Controllers\HomeController::class, 'product'])->name('product');
 
 
 

@@ -19,6 +19,15 @@
 
     <!-- Main content -->
     <div class="content">
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
@@ -28,6 +37,7 @@
                         <tr>
                           <th style="width: 5%">#</th>
                             <th class="th-sm">Name</th>
+                            <th class="th-sm">Slug</th>
                             <th class="th-sm">Main Category</th>
                             <th class="th-sm">Sub Category</th>
                             <th class="th-sm">Third Category</th>
@@ -40,6 +50,7 @@
                      <tr>
                      	<td>{{$key+1}}</td>
                      	<td>{{$record->name}}</td>
+                     	<td>{{$record->slug}}</td>
                       <td>{{$record->category ? $record->category->name : ''}}</td>
                       <td>{{$record->sub_category ? $record->sub_category->name : ''}}</td>
                       <td>{{$record->third_category ? $record->third_category->name : ''}}</td>
@@ -83,6 +94,10 @@
                     <input type="text" class="form-control" name="name" id='product_name' required placeholder="Enter product name">
                   </div>
                   <div class="form-group">
+                    <label for="exampleInputEmail1">Product Slug</label>
+                    <input type="text" class="form-control slug" name="slug" id='product_slug' required placeholder="Enter product name">
+                  </div>
+                  <div class="form-group">
                     <label for="exampleInputEmail1">Category</label>
                     <select type="text" class="form-control" name="category_id" id='category_id' required>
                       <option>Please select the following</option>
@@ -118,53 +133,7 @@
   </div>
 </div>
         </form>
-        <!-- edit Modal -->
-        <form action="edit_third_category" method="post" enctype="multipart/form-data">
-          @csrf
-<div class="modal fade" id="edit_category" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Sub Category</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <div class="card-body">
-          				<div class="form-group" style="display: none;">
-                    <label for="exampleInputEmail1">id</label>
-                    <input type="text" class="form-control" name="id" id="this_category_id"  placeholder="Category name" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Parent Category</label>
-                    <select type="text" class="form-control" name="category_id" id='edit_parent_category_id' required>
-                      <option>Please select the following</option>
-                      @foreach($categories as $category)
-                      <option value="{{$category->id}}">{{$category->name}}</option>
-                      @endforeach
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Sub Category Name</label>
-                    <input type="text" class="form-control" name="name" id="edit_name"  placeholder="Category name" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Sub Category Image</label>
-                    <input type="file" class="form-control" name="category_image" id='edit_category_image' onchange="edit_image(this);">
-                  </div>
-                 
-                </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-success">Update</button>
-      </div>
-    </div>
-  </div>
-</div>
-        </form>
+      
 @endsection()
 
 @section('footer')
@@ -309,5 +278,8 @@
             }
           });
 });
+$('.slug').on('input',function(event) {
+  this.value = this.value.replace(/[^a-z\-]+/g, "");
+    });
 </script>
 @endsection

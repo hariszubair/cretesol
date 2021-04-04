@@ -19,6 +19,15 @@
 
     <!-- Main content -->
     <div class="content">
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
       <div class="card-body">
         {!! Form::open(['method'=>'PATCH','route'=>['admin.update_product', $product->id],'id'=>'update_form']) !!}
                  
@@ -27,6 +36,10 @@
                 <div class="form-group col-md-6">
                     <label for="exampleInputEmail1">Product Name</label>
                     <input type="text" class="form-control" name="name" id='product_name' required placeholder="Enter product name" value="{{$product->name}}">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="exampleInputEmail1">Product Slug</label>
+                    <input type="text" class="form-control" name="slug" id='product_slug' required placeholder="Enter product slug" value="{{$product->slug}}">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="exampleInputEmail1">Category</label>
