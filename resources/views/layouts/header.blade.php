@@ -38,7 +38,7 @@ color:black !important;
 .is-stuck {
         background-color: black;
   position: fixed;
-  left: 0;
+  left: 15px;
   right: 0;
   top: 0;
   z-index: 99;

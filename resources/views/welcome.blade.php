@@ -12,7 +12,7 @@
                                 <div class="octf-col logo-col no-padding">
                                     <div id="site-logo" class="site-logo">
                                         <a href="index.html">
-                                            <img id="main_logo" src="images/dark-logo.png" alt="Cretesol" class="" style="padding: 30px">
+                                            <img id="main_logo" src="images/dark-logo.png" alt="Cretesol" class="" >
                                         </a>
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@
                             <div class="mlogo_wrapper clearfix">
                                 <div class="mobile_logo">
                                     <a href="index.html">
-                                        <img src="images/dark-logo.png" alt="Cretesol" style="padding: 30px">
+                                        <img src="images/dark-logo.png" alt="Cretesol" >
                                     </a>
                                 </div>
                             </div>
