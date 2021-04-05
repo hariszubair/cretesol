@@ -186,8 +186,8 @@
                 var fsize = fi.files.item(i).size; 
                 var file = Math.round((fsize / 1024)); 
                 // The size of the file. 
-                if (file >= 2048) { 
-                  swal("File too Big, please select a file less than 2mb", "", "error", {
+                if (file >= 7048) { 
+                  swal("File too Big, please select a file less than 7mb", "", "error", {
                 buttons: false,
                 timer: 1500,
                 });  
@@ -228,8 +228,8 @@
                 var fsize = fi.files.item(i).size; 
                 var file = Math.round((fsize / 1024)); 
                 // The size of the file. 
-                if (file >= 2048) { 
-                  swal("File too Big, please select a file less than 2mb", "", "error", {
+                if (file >= 7048) { 
+                  swal("File too Big, please select a file less than 7mb", "", "error", {
                 buttons: false,
                 timer: 1500,
                 });  

@@ -9,10 +9,9 @@
                         <p>We provides a full range of interior design, architectural design.</p>
                         <div class="footer-social list-social">
                             <ul>
-                                <li><a href="http://facebook.com" target="_self"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="http://twitter.com" target="_self"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="http://linkedin.com" target="_self"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href="http://instagram" target="_self"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://www.facebook.com/cretesol" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://pk.linkedin.com/company/cretesolstone" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="https://www.instagram.com/cretesolofficial_" target="_blank"><i class="fab fa-instagram"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -22,16 +21,39 @@
                         <h6>Contacts</h6>
                         <ul class="footer-list">
                             <li class="footer-list-item">
-                                <span class="list-item-icon"><i class="ot-flaticon-place"></i></span>
-                                <span class="list-item-text">411 University St, Seattle, USA</span>
-                            </li>
-                            <li class="footer-list-item">
                                 <span class="list-item-icon"><i class="ot-flaticon-mail"></i></span>
-                                <span class="list-item-text">Cretesol_interior@mail.com</span>
+                                <span class="list-item-text">marketing@cretesol.com</span>
                             </li>
                             <li class="footer-list-item">
                                 <span class="list-item-icon"><i class="ot-flaticon-phone-call"></i></span>
-                                <span class="list-item-text">+1 800 456 789 123</span>
+                                <span class="list-item-text">03358855855</span>
+                            </li>
+                            <li class="footer-list-item">
+                                <span class="list-item-icon"><i class="ot-flaticon-phone-call"></i></span>
+                                <span class="list-item-text">03405550913</span>
+                            </li>
+                            <li class="footer-list-item">
+                                <span class="list-item-icon"><i class="fas fa-clock"></i></span>
+                                <span class="list-item-text">Monday to Saturday <br> 10:00am to 7:00pm
+                               <br> Friday Break- 1:00pm to 2:45pm
+                                Sunday - Closed
+                            </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-4 mb-xl-0">
+                    <div class="widget-footer">
+                        <h6>Address</h6>
+                        <ul class="footer-list">
+                            <li class="footer-list-item" >
+                                <span class="list-item-text" style="padding-left:0"><b>Islamabad Showroom (Flagship)</b></br>
+                                    <p style="padding-top:20px">Plot No.399 Sector I-9/3</p>
+                                    <p>Industrial Area, Islamabad</p>
+                                    <b><p>Karachi Showroom</p></b>
+                                    <p>90C, Main Khayaban-e-Ittehad,</p>
+                                    Phase II Extension DHA<br>
+                                </span>
                             </li>
                         </ul>
                     </div>
@@ -44,20 +66,6 @@
                             <li><a href="#">Projects</a></li>
                             <li><a href="#">Clients</a></li>
                         </ul>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                    <div class="widget-footer footer-widget-subcribe">
-                        <h6>Subscribe</h6>
-                        <form class="mc4wp-form" method="post">
-                            <div class="mc4wp-form-fields">
-                                <div class="subscribe-inner-form">
-                                    <input type="email" name="EMAIL" placeholder="YOUR EMAIL" required="">
-                                    <button type="submit" class="subscribe-btn-icon"><i class="ot-flaticon-send"></i></button>
-                                </div>
-                            </div>
-                        </form>
-                        <p>Follow our newsletter to stay updated about agency.</p>
                     </div>
                 </div>
             </div>
@@ -93,14 +101,15 @@
 });
         
          $(window).on("scroll", function(){
+             console.log(window.location.origin)
         var site_header = $('#site-header').outerHeight() + 1;  
             
         if ($(window).scrollTop() >= site_header) { 
             $('.octf-mainbar-row').addClass('is-stuck'); 
-            $('#main_logo').attr("src", "images/white-logo.png");  
+            $('#main_logo').attr("src", "{{asset('images/white-logo.png')}}");  
         }else {
             $('.octf-mainbar-row').removeClass('is-stuck');  
-            $('#main_logo').attr("src", "images/dark-logo.png");  
+            $('#main_logo').attr("src", "{{asset('images/dark-logo.png')}}");  
         }
     });
     </script>  
@@ -120,14 +129,14 @@
 
     <!-- REVOLUTION JS FILES -->
 
-    <script  src="plugins/revolution/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script  src="plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script  src="{{asset('plugins/revolution/revolution/js/jquery.themepunch.tools.min.js')}}"></script>
+    <script  src="{{asset('plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js')}}"></script>
 
     <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->    
-    <script  src="plugins/revolution/revolution/js/extensions/revolution-plugin.js"></script>
+    <script  src="{{asset('plugins/revolution/revolution/js/extensions/revolution-plugin.js')}}"></script>
 
     <!-- REVOLUTION SLIDER SCRIPT FILES -->
-    <script  src="js/rev-script-1.js"></script>
+    <script  src="{{asset('js/rev-script-1.js')}}"></script>
     
 
                       @yield('footer')

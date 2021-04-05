@@ -121,7 +121,7 @@
                         <ul>
                         
                             <!-- SLIDE 1 -->
-                            <li data-index="rs-70" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="https://via.placeholder.com/1920x950.png"  data-rotate="0"  data-saveperformance="off"  data-title="" data-param1="1" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                            <li  data-index="rs-70" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="https://via.placeholder.com/1920x950.png"  data-rotate="0"  data-saveperformance="off"  data-title="" data-param1="1" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                                 <!-- MAIN IMAGE -->
                                 <img src="images/slider1.jpg" data-bgcolor='rgba(255,255,255,0)' style='' alt=""  data-bgposition="center center" data-bgfit="cover" class="rev-slidebg" data-bgrepeat="no-repeat" data-bgparallax="off" data-no-retina>
                                 
@@ -129,7 +129,7 @@
 
                                                             
                                 <!-- LAYER 3  Thin text title-->
-                                <div class="tp-caption tp-resizeme tp-caption-big" 
+                                <div  class="tp-caption tp-resizeme tp-caption-big-first" 
                                     id="slide-70-layer-1" 
                                     data-x="['center','center','center','center']" data-hoffset="['56','46','34','0']" 
                                     data-y="['center','center','center','center']" data-voffset="['-64','-72','-65','-50']" 
@@ -222,7 +222,7 @@
                             <!-- SLIDE 1 -->
                             <li data-index="rs-71" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="https://via.placeholder.com/1920x950.png"  data-rotate="0"  data-saveperformance="off"  data-title="" data-param1="1" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                                 <!-- MAIN IMAGE -->
-                                <img src="images/slider2.jpg" data-bgcolor='#ffffff' style='' alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="off" data-no-retina>
+                                <img src="images/slider2.jpg" data-bgcolor='#ffffff' style='object-fit:cover;width:100%' alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="off" data-no-retina>
                                   
                                                             
                                 <!-- LAYER 3  Thin text title-->
@@ -417,10 +417,9 @@
                 </div>
                 <div class="banner-desc-1">
                     <ul>
-                        <li><a href="#"><span>pinterest</span></a></li>
-                        <li><a href="#"><span>twitter</span></a></li>
-                        <li><a href="#"><span>facebook</span></a></li>
-                        <li><a href="#"><span>instagram</span></a></li>
+                        <li><a href="https://www.instagram.com/cretesolofficial_" target="_blank"><span>instagram</span></a></li>
+                        <li><a href="https://www.facebook.com/cretesol" target="_blank"><span>facebook</span></a></li>
+                        <li><a href="https://pk.linkedin.com/company/cretesolstone" target="_blank"><span>linkedin</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -430,7 +429,7 @@
                         <div class="col-lg-4 col-md-6 px-0">
                             <div class="cate-lines h-light">
                                 <div class="cate-item">
-                                        <img src="images/office.jpg" alt="Cretesol">
+                                        <img src="images/office.jpg" alt="Cretesol-office-interior"  style="height:250px;width:100%;object-fit:cover">
                                     <div class="cate-item_content">
                                         <h2>Office Spaces<span class="number-stroke">01</span></h2>
                                     </div>
@@ -440,7 +439,7 @@
                         <div class="col-lg-4 col-md-6 px-0">
                             <div class="cate-lines h-light">
                                 <div class="cate-item">
-                                        <img src="images/public.jpg" alt="">
+                                        <img src="images/public.jpg" alt="Cretesol-public-interior"  style="height:250px;width:100%;object-fit:cover">
                                     <div class="cate-item_content">
                                        <h2>Public Spaces<span class="number-stroke">02</span></h2>
                                     </div>
@@ -450,7 +449,7 @@
                         <div class="col-lg-4 col-md-6 px-0">
                             <div class="cate-lines s-dark">
                                 <div class="cate-item">
-                                        <img src="images/residential.jpg" alt="">
+                                        <img src="images/residential.jpg" alt="Cretesol-residential-interior" style="height:250px;width:100%;object-fit:cover">
                                     <div class="cate-item_content">
                                        <h2>Residential </h2><h2>Spaces</h2><span class="number-stroke">03</span>
                                     </div>
@@ -469,7 +468,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center Cretesol-align-center">
-                            <div class="ot-heading is-dots">
+                            <div class="ot-heading " style="padding-bottom:30px">
                                 <span>[ OUR SERVICES ]</span>
                                 <h2 class="main-heading">What Can We Offer</h2>
                             </div>

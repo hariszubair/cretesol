@@ -204,5 +204,48 @@
    
 
 });
+
+function image(input) {
+            
+            var fi = document.getElementById('category_image'); 
+            console.log(1)
+        // Check if any file is selected. 
+        if (fi.files.length > 0) { 
+            for (var i = 0; i <= fi.files.length - 1; i++) { 
+                var name=fi.files.item(i).name;
+                var fsize = fi.files.item(i).size; 
+                var file = Math.round((fsize / 1024)); 
+                // The size of the file. 
+                if (file >= 7048) { 
+                  swal("File too Big, please select a file less than 7mb", "", "error", {
+                buttons: false,
+                timer: 1500,
+                });  
+                    $('#category_image').val(null);
+
+                }  else if(name.substr(name.length - 4).toUpperCase()!='.JPG'){
+                  swal("File is not in jpg format", "", "error", {
+                buttons: false,
+                timer: 1500,
+                });  
+                    $('#category_image').val(null);
+
+                } else {
+
+                    if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                reader.readAsDataURL(input.files[0]);
+            }
+                } 
+            } 
+        } 
+
+
+
+
+        }
+    }
 </script>
   @endsection

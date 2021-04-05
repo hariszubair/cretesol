@@ -8203,10 +8203,16 @@ ul.style-default li:last-child, ol.style-default li:last-child {
 }
 /* Index 1 */
 .tp-caption-big {
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3); 
+    -webkit-text-stroke: 3px rgba(117, 151, 36, 0.911); 
     color: transparent; 
     text-transform: uppercase; 
     font-family: 'Titillium Web';
+}
+.tp-caption-big-first {
+  -webkit-text-stroke: 3px rgba(202, 204, 197, 0.911); 
+  color: transparent; 
+  text-transform: uppercase; 
+  font-family: 'Titillium Web';
 }
 .tp-caption-main, .tp-caption {
     font-family: 'Titillium Web';

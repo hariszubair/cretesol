@@ -12,7 +12,7 @@
 						jsFileLocation:"revolution/js/",
 						sliderLayout:"fullscreen",
 						dottedOverlay:"none",
-						delay:9000,
+						delay:4000,
 						navigation: {
 							keyboardNavigation:"off",
 							keyboard_direction: "horizontal",
