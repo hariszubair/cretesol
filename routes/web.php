@@ -80,4 +80,7 @@ Route::post('/admin/add_image', [App\Http\Controllers\ProductController::class, 
 
 
 
-
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('config:cache');
+    $exitCode = Artisan::call('cache:clear');
+});
