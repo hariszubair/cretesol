@@ -29,7 +29,7 @@
      left: 0; 
 }
 .icon-box--is-line-hover:hover {
--webkit-filter: brightness(130%) !important;
+-webkit-filter: brightness(110%) !important;
 
 }
 .icon-box--is-line-hover:hover div h2{
