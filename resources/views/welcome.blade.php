@@ -50,7 +50,7 @@
                             <div class="mlogo_wrapper clearfix">
                                 <div class="mobile_logo">
                                     <a href="index.html">
-                                        <img src="images/dark-logo.png" alt="Cretesol" >
+                                        <img id="main_logo_mobile" src="images/dark-logo.png" alt="Cretesol" >
                                     </a>
                                 </div>
                             </div>

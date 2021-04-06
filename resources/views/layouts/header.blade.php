@@ -36,11 +36,10 @@
 color:black !important;
 }
 .is-stuck {
-        background-color: black;
+  background-color: black;
   position: fixed;
-  left: 15px;
-  right: 0;
   top: 0;
+  width: 100%;
   z-index: 99;
   border: none !important;
   -webkit-animation: stickySlideDown 0.65s cubic-bezier(0.23, 1, 0.32, 1) both;

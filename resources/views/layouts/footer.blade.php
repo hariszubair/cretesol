@@ -106,10 +106,13 @@
             
         if ($(window).scrollTop() >= site_header) { 
             $('.octf-mainbar-row').addClass('is-stuck'); 
-            $('#main_logo').attr("src", "{{asset('images/white-logo.png')}}");  
+            $('#main_logo').attr("src", "{{asset('images/white-logo.png')}}");
+            $('#main_logo_mobile').attr("src", "{{asset('images/white-logo.png')}}");  
         }else {
             $('.octf-mainbar-row').removeClass('is-stuck');  
-            $('#main_logo').attr("src", "{{asset('images/dark-logo.png')}}");  
+            $('#main_logo').attr("src", "{{asset('images/dark-logo.png')}}"); 
+            $('#main_logo_mobile').attr("src", "{{asset('images/dark-logo.png')}}");  
+
         }
     });
     </script>  
