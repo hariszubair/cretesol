@@ -1,10 +1,10 @@
        
 
-    <footer id="site-footer" class="site-footer">
+    <footer id="site-footer" class="site-footer" >
         <div class="container">
-            <div class="row">
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-4 mb-xl-0">
-                    <div class="widget-footer">
+            <div class="row" >
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-4 mb-xl-0" style="padding-top:15px">
+                    <div class="widget-footer navBarFont" >
                         <!-- <img src="{{asset('images/white-logo.png')}}" class="footer-logo" alt=""> -->
                         <p>We provides a full range of interior design, architectural design.</p>
                         <div class="footer-social list-social">
@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-4 mb-xl-0">
-                    <div class="widget-footer">
+                    <div class="widget-footer navBarFont">
                         <h6>Contacts</h6>
                         <ul class="footer-list">
                             <li class="footer-list-item">
@@ -34,7 +34,7 @@
                             </li>
                             <li class="footer-list-item">
                                 <span class="list-item-icon"><i class="fas fa-clock"></i></span>
-                                <span class="list-item-text">Monday to Saturday <br> 10:00am to 7:00pm
+                                <span class="list-item-text" style="line-height:2px">Monday to Saturday <br> 10:00am to 7:00pm
                                <br> Friday Break- 1:00pm to 2:45pm
                                 Sunday - Closed
                             </span>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-4 mb-xl-0">
-                    <div class="widget-footer">
+                    <div class="widget-footer navBarFont">
                         <h6>Address</h6>
                         <ul class="footer-list">
                             <li class="footer-list-item" >
@@ -59,9 +59,9 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-4 mb-md-0">
-                    <div class="widget-footer widget-contact">
-                        <h6><a href="{{URL('admin')}}">Admin Panel</a></h6>
-                        <ul>
+                    <div class="widget-footer ">
+                        <h6 class="navBarFont" style="margin-bottom:35px"><a href="{{URL('admin')}}" style="color:white">Admin Panel</a></h6>
+                        <ul class="navBarFont footer-list" style="padding:0">
                             <li><a href="#">Contact Us</a></li>
                             <li><a href="#">Projects</a></li>
                             <li><a href="#">Clients</a></li>

@@ -18,7 +18,7 @@
                                 </div>
                                 <div class="octf-col menu-col no-padding">
                                     <nav id="site-navigation" class="main-navigation">
-                                        <ul class="menu">
+                                        <ul class="menu" style="font-family:'navBarFont'">
                                             <li id='home_link' class=" current-menu-item current-menu-ancestor">
                                                 <a href="{{URL('/')}}">Home</a>
                                             </li>
@@ -79,7 +79,7 @@
                                     <div class="mmenu-inner">
                                         <a class="mmenu-close" href="#"><i class="ot-flaticon-right-arrow"></i></a>
                                         <div class="mobile-nav">
-                                            <ul id="menu-main-menu" class="mobile_mainmenu none-style">
+                                            <ul id="menu-main-menu" class="mobile_mainmenu none-style" style="font-family:'navBarFont'">
                                                 <li class=" current-menu-item current-menu-ancestor">
                                                 <a href="index.html">Home</a>
                                             </li>
@@ -118,7 +118,7 @@
                 <div id="rev_slider_one_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="mask-showcase" data-source="gallery">
                     <!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
                     <div id="rev_slider_one" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.1">
-                        <ul>
+                        <ul style="font-family:'navBarFont'">
                         
                             <!-- SLIDE 1 -->
                             <li  data-index="rs-70" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="https://via.placeholder.com/1920x950.png"  data-rotate="0"  data-saveperformance="off"  data-title="" data-param1="1" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
@@ -129,7 +129,7 @@
 
                                                             
                                 <!-- LAYER 3  Thin text title-->
-                                <div  class="tp-caption tp-resizeme tp-caption-big-first" 
+                                <!-- <div  class="tp-caption tp-resizeme tp-caption-big-first" 
                                     id="slide-70-layer-1" 
                                     data-x="['center','center','center','center']" data-hoffset="['56','46','34','0']" 
                                     data-y="['center','center','center','center']" data-voffset="['-64','-72','-65','-50']" 
@@ -148,7 +148,7 @@
                                     data-textAlign="['center','center','center','center']"
                 
                                     >Design
-                                </div>
+                                </div> -->
                                        
                                 <!-- LAYER 4  Bold Title-->
                                 <div class="tp-caption tp-resizeme tp-caption-main" 
@@ -156,7 +156,7 @@
                                     data-x="['center','center','center','center']" data-hoffset="['2','0','0','0']" 
                                     data-y="['center','center','center','center']" data-voffset="['-56','-63','-60','-65']"
                                     data-fontsize="['93','72','55','40']"
-                                    data-lineheight="['83','70','51','55']"
+                                    data-lineheight="['100','70','51','55']"
                                     data-color="['#fff','#fff','#fff','#fff']"
                                     data-fontweight="['200','200','200','200']"
                                     data-whitespace="nowrap"
@@ -167,7 +167,7 @@
                                     data-frames='[{"delay":900,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
 
                                     data-textAlign="['left','left','left','left']"
-                
+                                    style="font-family:'sliderFont'"
                                     >New Level of Interior 
                                 </div>
                                                                     
@@ -176,7 +176,7 @@
                                     id="slide-70-layer-3" 
                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                     data-y="['center','center','center','center']" data-voffset="['54','43','31','15']" 
-                                    data-fontsize="['19','18','17','16']"
+                                    data-fontsize="['23','18','17','16']"
                                     data-lineheight="['33','27','28','24']"
                                     data-width="['818','630','500','417']"
                                     data-weight="['500','500','500','500']"
@@ -189,7 +189,7 @@
                                     data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
                                     
                                     data-textAlign="['center','center','center','center']"
-                
+                                    style="font-family:'sliderFont'"
                                     >We pride ourselves on being builders — creating architectural and creative solutions to help people realize their vision and make them a reality. Wanna work with us?
                                     </div> 
         
@@ -226,7 +226,7 @@
                                   
                                                             
                                 <!-- LAYER 3  Thin text title-->
-                                <div class="tp-caption tp-resizeme tp-caption-big" 
+                                <!-- <div class="tp-caption tp-resizeme tp-caption-big" 
                                     id="slide-71-layer-1" 
                                     data-x="['center','center','center','center']" data-hoffset="['56','46','34','0']" 
                                     data-y="['center','center','center','center']" data-voffset="['-64','-72','-65','-50']" 
@@ -245,7 +245,7 @@
                                     data-textAlign="['center','center','center','center']"
                 
                                     >Quality
-                                </div>
+                                </div> -->
                                        
                                 <!-- LAYER 4  Bold Title-->
                                 <div class="tp-caption tp-resizeme tp-caption-main" 
@@ -253,7 +253,7 @@
                                     data-x="['center','center','center','center']" data-hoffset="['2','0','0','0']" 
                                     data-y="['center','center','center','center']" data-voffset="['-56','-63','-60','-65']"
                                     data-fontsize="['93','72','55','40']"
-                                    data-lineheight="['83','70','51','55']"
+                                    data-lineheight="['100','70','51','55']"
                                     data-color="['#fff','#fff','#fff','#fff']"
                                     data-fontweight="['200','200','200','200']"
                                     data-whitespace="nowrap"
@@ -264,7 +264,7 @@
                                     data-frames='[{"delay":900,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
 
                                     data-textAlign="['left','left','left','left']"
-                
+                                    style="font-family:'sliderFont'"
                                     >High-end Interior Design
                                 </div>
                                                                     
@@ -273,7 +273,7 @@
                                     id="slide-71-layer-3" 
                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                     data-y="['center','center','center','center']" data-voffset="['54','43','31','15']" 
-                                    data-fontsize="['19','18','17','16']"
+                                    data-fontsize="['23','18','17','16']"
                                     data-lineheight="['33','27','28','24']"
                                     data-width="['818','630','500','417']"
                                     data-weight="['500','500','500','500']"
@@ -286,7 +286,7 @@
                                     data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
                                     
                                     data-textAlign="['center','center','center','center']"
-                
+                                    style="font-family:'sliderFont'"
                                     >We pride ourselves on being builders — creating architectural and creative solutions to help people realize their vision and make them a reality. Wanna work with us?
                                     </div> 
         
@@ -321,7 +321,7 @@
                                 
                                                             
                                 <!-- LAYER 3  Thin text title-->
-                                <div class="tp-caption tp-resizeme tp-caption-big" 
+                                <!-- <div class="tp-caption tp-resizeme tp-caption-big" 
                                     id="slide-72-layer-1" 
                                     data-x="['center','center','center','center']" data-hoffset="['56','46','34','0']" 
                                     data-y="['center','center','center','center']" data-voffset="['-64','-72','-65','-50']" 
@@ -340,7 +340,7 @@
                                     data-textAlign="['center','center','center','center']"
                 
                                     >Studio
-                                </div>
+                                </div> -->
                                        
                                 <!-- LAYER 4  Bold Title-->
                                 <div class="tp-caption tp-resizeme tp-caption-main" 
@@ -348,7 +348,7 @@
                                     data-x="['center','center','center','center']" data-hoffset="['2','0','0','0']" 
                                     data-y="['center','center','center','center']" data-voffset="['-56','-63','-60','-65']"
                                     data-fontsize="['93','72','55','40']"
-                                    data-lineheight="['83','70','51','55']"
+                                    data-lineheight="['100','70','51','55']"
                                     data-color="['#fff','#fff','#fff','#fff']"
                                     data-fontweight="['200','200','200','200']"
                                     data-whitespace="nowrap"
@@ -359,8 +359,8 @@
                                     data-frames='[{"delay":900,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
 
                                     data-textAlign="['left','left','left','left']"
-                
-                                    >Best Furniture and Decor
+                                    style="font-family:'sliderFont'"
+                                    >Best Tiles and Stones
                                 </div>
                                                                     
                                 <!-- LAYER 5  Paragraph-->
@@ -368,7 +368,7 @@
                                     id="slide-72-layer-3" 
                                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                     data-y="['center','center','center','center']" data-voffset="['54','43','31','15']" 
-                                    data-fontsize="['19','18','17','16']"
+                                    data-fontsize="['23','18','17','16']"
                                     data-lineheight="['33','27','28','24']"
                                     data-width="['818','630','500','417']"
                                     data-weight="['500','500','500','500']"
@@ -381,7 +381,7 @@
                                     data-frames='[{"delay":1200,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
                                     
                                     data-textAlign="['center','center','center','center']"
-                
+                                    style="font-family:'sliderFont'"
                                     >We pride ourselves on being builders — creating architectural and creative solutions to help people realize their vision and make them a reality. Wanna work with us?
                                     </div> 
         

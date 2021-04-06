@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="octf-col menu-col no-padding">
                                     <nav id="site-navigation" class="main-navigation">
-                                        <ul class="menu">
+                                        <ul class="menu" style="font-family:'navBarFont'">
                                             <li id='home_link' >
                                                 <a href="{{URL('/')}}">Home</a>
                                             </li>
@@ -84,7 +84,7 @@
                                     <div class="mmenu-inner">
                                         <a class="mmenu-close" href="#"><i class="ot-flaticon-right-arrow"></i></a>
                                         <div class="mobile-nav">
-                                            <ul id="menu-main-menu" class="mobile_mainmenu none-style">
+                                            <ul id="menu-main-menu" class="mobile_mainmenu none-style" style="font-family:'navBarFont'">
                                                 <li class=" current-menu-item current-menu-ancestor">
                                                 <a href="index.html">Home</a>
                                             </li>
@@ -112,11 +112,11 @@
         </header>
  
 
-        <div id="content" class="site-content">
+        <div id="content" class="site-content" >
             <div class="page-header dtable text-center header-transparent pheader-portfolio" style="background-image: url({{URL($category->image)}});">
                 <div class="dcell">
-                    <div class="container">
-                        <h1 class="page-title">{{$category->name}}</h1>
+                    <div class="container" style="font-family:'sliderFont'">
+                        <h1 class="page-title" style="font-family:'sliderFont'">{{$category->name}}</h1>
                         <ul id="breadcrumbs" class="breadcrumbs none-style">
                             <li><a href="{{URL('/')}}">Home</a></li>
                             <li class="active">{{$category->name}}</li>

@@ -36,6 +36,7 @@
 color:black !important;
 }
 .is-stuck {
+    opacity: 90%;
   background-color: black;
   position: fixed;
   top: 0;
@@ -45,6 +46,34 @@ color:black !important;
   -webkit-animation: stickySlideDown 0.65s cubic-bezier(0.23, 1, 0.32, 1) both;
   -moz-animation: stickySlideDown 0.65s cubic-bezier(0.23, 1, 0.32, 1) both;
   animation: stickySlideDown 0.65s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+@media (min-width: 1024px) {
+  #main_logo {
+    margin-left: 95px;
+  }
+  
+}
+@font-face {
+  font-family: 'navBarFont';
+  src: 
+        url("{{asset('fonts/A.otf')}}");
+        format('truetype');
+  font-style: normal;
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'sliderFont';
+  src: 
+        url("{{asset('fonts/B.ttf')}}");
+        format('truetype');
+  font-style: normal;
+  font-weight: 100;
+}
+.navBarFont{
+    font-family:'navBarFont'
+}
+.sliderFont{
+    font-family:'sliderFont'
 }
 </style>
 <body>
