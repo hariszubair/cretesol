@@ -8,14 +8,14 @@
     <title>Cretesol | Tiles  Stones</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/royal-preload.css')}}" rel="stylesheet">
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/flaticon.css')}}" rel="stylesheet">
     <link href="{{asset('css/owl.carousel.min.css')}}" rel="stylesheet">
-    <link href="{{asset('css/owl.theme.css')}}" rel="stylesheet">
-    <link href="{{asset('css/magnific-popup.css')}}" rel="stylesheet">
-    <link href="{{asset('css/lightgallery.css')}}" rel="stylesheet">
-    <link href="{{asset('css/woocommerce.css')}}" rel="stylesheet">
-    <link href="{{asset('css/royal-preload.css')}}" rel="stylesheet">
+    <!-- <link href="{{asset('css/owl.theme.css')}}" rel="stylesheet"> -->
+    <!-- <link href="{{asset('css/magnific-popup.css')}}" rel="stylesheet"> -->
+    <!-- <link href="{{asset('css/lightgallery.css')}}" rel="stylesheet"> -->
+    <!-- <link href="{{asset('css/woocommerce.css')}}" rel="stylesheet"> -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <!-- REVOLUTION SLIDER CSS -->
     <link href="{{asset('plugins/revolution/revolution/css/settings.css')}}" rel="stylesheet">

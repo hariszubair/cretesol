@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-4 mb-xl-0">
                     <div class="widget-footer">
-                        <img src="images/white-logo.png" class="footer-logo" alt="">
+                        <!-- <img src="{{asset('images/white-logo.png')}}" class="footer-logo" alt=""> -->
                         <p>We provides a full range of interior design, architectural design.</p>
                         <div class="footer-social list-social">
                             <ul>
@@ -47,12 +47,12 @@
                         <h6>Address</h6>
                         <ul class="footer-list">
                             <li class="footer-list-item" >
-                                <span class="list-item-text" style="padding-left:0"><b>Islamabad Showroom (Flagship)</b></br>
+                                <span class="list-item-text" style="padding-left:0"><b>Islamabad Showroom (Flagship)</b> <br>
                                     <p style="padding-top:20px">Plot No.399 Sector I-9/3</p>
                                     <p>Industrial Area, Islamabad</p>
                                     <b><p>Karachi Showroom</p></b>
                                     <p>90C, Main Khayaban-e-Ittehad,</p>
-                                    Phase II Extension DHA<br>
+                                    Phase II Extension DHA
                                 </span>
                             </li>
                         </ul>
@@ -118,7 +118,7 @@
     </script>  
 <script src="{{asset('public/js/mousewheel.min.js')}}"></script>
 <script src="{{asset('public/js/lightgallery-all.min.js')}}"></script>
-<script src="{{asset('public/js/jquery.magnific-popup.min.js')}}"></script>
+<!-- <script src="{{asset('public/js/jquery.magnific-popup.min.js')}}"></script> -->
 
 
 <script src="{{asset('public/js/jquery.isotope.min.js')}}"></script>
@@ -126,8 +126,8 @@
 
 
 <script src="{{asset('public/js/owl.carousel.min.js')}}"></script>
-<script src="{{asset('public/js/easypiechart.min.js')}}"></script>
-<script src="{{asset('public/js/jquery.countdown.min.js')}}"></script>
+<!-- <script src="{{asset('public/js/easypiechart.min.js')}}"></script> -->
+<!-- <script src="{{asset('public/js/jquery.countdown.min.js')}}"></script> -->
 <script src="{{asset('public/js/scripts.js')}}"></script>
 
     <!-- REVOLUTION JS FILES -->
