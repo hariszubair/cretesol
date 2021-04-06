@@ -4417,6 +4417,7 @@ object {
   left: 60px;
 }
 .cate-lines img {
+  filter: brightness(80%);
   transition: all 0.3s linear;
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;

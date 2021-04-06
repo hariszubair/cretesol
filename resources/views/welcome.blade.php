@@ -427,7 +427,7 @@
                 <div class="container-fluid" style="padding-top: 20px">
                     <div class="row justify-content-center">
                         <div class="col-lg-4 col-md-6 px-0">
-                            <div class="cate-lines h-light">
+                            <div class="cate-lines">
                                 <div class="cate-item">
                                         <img src="images/office.jpg" alt="Cretesol-office-interior"  style="height:250px;width:100%;object-fit:cover">
                                     <div class="cate-item_content">
@@ -437,7 +437,7 @@
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 px-0">
-                            <div class="cate-lines h-light">
+                            <div class="cate-lines">
                                 <div class="cate-item">
                                         <img src="images/public.jpg" alt="Cretesol-public-interior"  style="height:250px;width:100%;object-fit:cover">
                                     <div class="cate-item_content">
@@ -447,7 +447,7 @@
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 px-0">
-                            <div class="cate-lines s-dark">
+                            <div class="cate-lines">
                                 <div class="cate-item">
                                         <img src="images/residential.jpg" alt="Cretesol-residential-interior" style="height:250px;width:100%;object-fit:cover">
                                     <div class="cate-item_content">
