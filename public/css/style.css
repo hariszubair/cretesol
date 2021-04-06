@@ -1381,7 +1381,7 @@ a:hover, a:active {
   align-items: center;
   line-height: 1;
 }
-#site-logo img {
+.octf-mainbar-row , .octf-row {
   height: 90px;
 }
 #site-logo img.logo-static {
