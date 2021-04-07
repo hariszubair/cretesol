@@ -2304,7 +2304,10 @@ section.is-stuck {
     padding-left: 40px;
   }
   #main_logo_mobile{
-  padding-top: 20px
+  padding-top: 20px;
+  height: 76px;
+ 
+
 }
 }
 @media only screen and (max-width: 767px) {
@@ -2312,7 +2315,9 @@ section.is-stuck {
     width: 100%;
   }
   #main_logo_mobile{
-  padding-top: 30px
+  padding-top: 30px;
+  height: 76px;
+
 }
 }
 @media only screen and (max-width: 320px) {
@@ -2322,7 +2327,8 @@ section.is-stuck {
   }*/
   
 #main_logo_mobile{
-  padding-top: 30px
+  padding-top: 30px;
+  height: 42.39px;
 }
 }
 /*--------------------------------------------------------------
@@ -8549,7 +8555,7 @@ ul.style-default li:last-child, ol.style-default li:last-child {
 .octf-mainbar-row .octf-col.menu-col {
     -ms-flex-pack: center;
     justify-content: center;
-    flex-grow: 0.6;
+    /*flex-grow: 0.6;*/
 }
 .octf-mainbar-row .octf-col.cta-col {
     flex-grow: 0.2;
