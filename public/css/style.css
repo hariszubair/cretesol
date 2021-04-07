@@ -2307,11 +2307,20 @@ section.is-stuck {
   .mlogo_wrapper {
     width: 100%;
   }
+  .mobile_logo img {
+    max-width: 200px;
+    max-height: 76px;
+    padding-top: 30px;
+  }
 }
 @media only screen and (max-width: 320px) {
   .mobile_logo img {
-    max-width: 230px;
-    max-height: 47px;
+    max-width: 200px;
+    max-height: 76px;
+    padding-top: 30px;
+  }
+  .header_mobile .mlogo_wrapper img{
+    height: 50px;
   }
 }
 /*--------------------------------------------------------------
