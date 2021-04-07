@@ -1,3 +1,4 @@
+
 @charset "UTF-8";
 /*
 Theme Name: Theratio
@@ -2108,7 +2109,7 @@ section.is-stuck {
     position: relative;
   }
   .header_mobile .mlogo_wrapper img {
-    height: 90px;
+    /*height: 90px;*/
   }
 
   .header_mobile .mlogo_wrapper .mobile_logo {
@@ -2302,17 +2303,27 @@ section.is-stuck {
   .mobile_nav ul li a:hover {
     padding-left: 40px;
   }
+  #main_logo_mobile{
+  padding-top: 20px
+}
 }
 @media only screen and (max-width: 767px) {
   .mlogo_wrapper {
     width: 100%;
   }
+  #main_logo_mobile{
+  padding-top: 30px
+}
 }
 @media only screen and (max-width: 320px) {
-  .mobile_logo img {
+ /* .mobile_logo img {
     max-width: 230px;
     max-height: 47px;
-  }
+  }*/
+  
+#main_logo_mobile{
+  padding-top: 30px
+}
 }
 /*--------------------------------------------------------------
 ## Page Header
@@ -7154,7 +7165,8 @@ div.elementor-widget-heading .elementor-heading-title {
     padding-right: 15px;
 }
 .header_mobile .mlogo_wrapper img {
-    height: 76px;
+ 
+    /*height: 76px;*/
 }
 .header_mobile .octf-row{
     display: flex;
