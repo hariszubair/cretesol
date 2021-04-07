@@ -5623,7 +5623,7 @@ object {
   bottom: 0;
   left: 0;
   background: rgba(10, 10, 10, 0.8);
-  opacity: 1;
+  opacity: 0;
   display: flex;
   align-items: center;
   transition: all 0.3s linear;
@@ -8047,7 +8047,7 @@ ul.style-default li:last-child, ol.style-default li:last-child {
 }
 /* Portfolio */
 .project-item {
-    padding: 15px;
+    padding: 30px;
 }
 .no-gaps .project-item {
     padding: 0px;

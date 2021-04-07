@@ -213,7 +213,7 @@
                                     data-paddingbottom="[0,0,0,0]"
                                     data-paddingleft="[0,0,0,0]"
                 
-                                    ><a href="portfolio-masonry.html" class="octf-btn octf-btn-primary btn-slider btn-large">View Projects</a>
+                                    ><a href="portfolio-masonry.html" class="octf-btn octf-btn-primary btn-slider btn-large aFont">View Projects</a>
                                 </div>  
                        
                             </li>  
@@ -310,7 +310,7 @@
                                     data-paddingbottom="[0,0,0,0]"
                                     data-paddingleft="[0,0,0,0]"
                 
-                                    ><a href="portfolio-masonry.html" class="octf-btn octf-btn-primary btn-slider btn-large">View Projects</a>
+                                    ><a href="portfolio-masonry.html" class="octf-btn octf-btn-primary btn-slider btn-large aFont">View Projects</a>
                                 </div>  
                             </li>  
 
@@ -405,7 +405,7 @@
                                     data-paddingbottom="[0,0,0,0]"
                                     data-paddingleft="[0,0,0,0]"
                 
-                                    ><a href="portfolio-masonry.html" class="octf-btn octf-btn-primary btn-slider btn-large">View Projects</a>
+                                    ><a href="portfolio-masonry.html" class="octf-btn octf-btn-primary btn-slider btn-large aFont">View Projects</a>
                                 </div>  
                             </li>  
                                                     
@@ -431,7 +431,7 @@
                                 <div class="cate-item">
                                         <img src="images/office.jpg" alt="Cretesol-office-interior"  style="height:250px;width:100%;object-fit:cover">
                                     <div class="cate-item_content">
-                                        <h2>Office Spaces<span class="number-stroke">01</span></h2>
+                                        <h2 class="aFont">Office Spaces</h2>
                                     </div>
                                 </div>
                             </div>
@@ -441,7 +441,7 @@
                                 <div class="cate-item">
                                         <img src="images/public.jpg" alt="Cretesol-public-interior"  style="height:250px;width:100%;object-fit:cover">
                                     <div class="cate-item_content">
-                                       <h2>Public Spaces<span class="number-stroke">02</span></h2>
+                                       <h2 class="aFont">Public Spaces</h2>
                                     </div>
                                 </div>
                             </div>
@@ -451,7 +451,7 @@
                                 <div class="cate-item">
                                         <img src="images/residential.jpg" alt="Cretesol-residential-interior" style="height:250px;width:100%;object-fit:cover">
                                     <div class="cate-item_content">
-                                       <h2>Residential </h2><h2>Spaces</h2><span class="number-stroke">03</span>
+                                       <h2 class="aFont">Residential </h2><h2 class="aFont">Spaces</h2>
                                     </div>
                                 </div>
                             </div>
@@ -470,23 +470,25 @@
                         <div class="col-md-12 text-center Cretesol-align-center">
                             <div class="ot-heading " style="padding-bottom:30px">
                                 <span>[ OUR SERVICES ]</span>
-                                <h2 class="main-heading">What Can We Offer</h2>
+                                <h2 class="main-heading bFont">What Can We Offer</h2>
                             </div>
                         </div>
                     </div>
                     <div class="row justify-content-center">
                     @foreach($categories as $category)
+                    <a href="{{URL('category/'.$category->slug)}}" >
                         <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="icon-box icon-box--bg-img icon-box--icon-top icon-box--is-line-hover text-center" style="background-image: url('{{substr($category->image, 1)}}');height: 300px;object-fit: cover;-webkit-filter: brightness(70%);">
+                            <div class="icon-box icon-box--bg-img icon-box--icon-top icon-box--is-line-hover text-center cat" style="background-image: url('{{substr($category->image, 1)}}');height: 300px;object-fit: cover;-webkit-filter: brightness(100%);">
                                 <div class="content-box">
-                                    <h2 style="color: white">{{$category->name}}</h2>
+                                    <h2 style="color: white;background:black;border-radius:12px;opacity:80%" class="bFont" >{{$category->name}}</h2>
                                     
                                 </div>
                                 <div class="link-box">
-                                    <a href="{{URL('category/'.$category->slug)}}" class="btn-details">VIEW MORE</a>
+                                    <a href="{{URL('category/'.$category->slug)}}" class="btn-details" style="font-size:14px">VIEW MORE</a>
                                 </div>
                             </div>
                         </div>
+                    </a>
                         @endforeach
                         
                         <div class="space-120"></div>
@@ -499,7 +501,7 @@
                                     <span class="num" data-to="180" data-time="2000">180</span>
                                     <span>+]</span>
                                 </div>
-                                <h6>Current Clients</h6>                            
+                                <h6 class="aFont"> <b>Current Clients</b> </h6>                            
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 mb-4 mb-xl-0">
@@ -509,7 +511,7 @@
                                     <span class="num" data-to="10" data-time="2000">10</span>
                                     <span>+]</span>
                                 </div>
-                                <h6>years of experience</h6>                            
+                                <h6 class="aFont">years of experience</h6>                            
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 mb-4 mb-sm-0">
@@ -519,7 +521,7 @@
                                     <span class="num" data-to="35" data-time="2000">35</span>
                                     <span>+]</span>
                                 </div>
-                                <h6>awards winning</h6>                             
+                                <h6 class="aFont">awards winning</h6>                             
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
@@ -529,7 +531,7 @@
                                     <span class="num" data-to="5" data-time="2000">5</span>
                                     <span>+]</span>
                                 </div>
-                                <h6>Offices Worldwide</h6>                              
+                                <h6 class="aFont">Offices Worldwide</h6>                              
                             </div>
                         </div>
                     </div>
@@ -540,13 +542,13 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 mb-4 mb-lg-0">
-                            <h2 class="text-light mb-0">Get Incredible Tiles Stones & Mosaic</h2>
+                            <h2 class="text-light mb-0 bFont">Get Incredible Tiles Stones & Mosaic</h2>
                             <div class="space-5"></div>
                             
                         </div>
                         <div class="col-lg-4 text-left text-lg-right align-self-center">
                             <div class="ot-button">
-                                <a href="contact.html" class="octf-btn octf-btn-light border-hover-light">get in touch</a>
+                                <a href="contact.html" class="octf-btn octf-btn-light border-hover-light aFont">get in touch</a>
                             </div>
                         </div>
                     </div>
@@ -554,4 +556,11 @@
             </section>
             
         </div>
+         <script>
+             $(".cat").click(function() {
+  window.location = $(this).find("a").attr("href"); 
+  return false;
+});
+         </script>
         @endsection
+        

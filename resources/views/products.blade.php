@@ -145,7 +145,7 @@
             <div class="container-fluid p-0">
             @if(count($products) > 0)
                 <div class="row">
-                    <div class="col-lg-8 text-center theratio-align-center" style="margin-left:auto;margin-right:auto">
+                    <div class="col-lg-11 text-center theratio-align-center" style="margin-left:auto;margin-right:auto">
                         <div class="project-filter-wrapper">
                             <div class="projects-grid pf_4_cols style-2 p-info-s2 img-scale w-auto projects-metro">
                                 <div class="grid-sizer"></div>
@@ -164,8 +164,8 @@
                                         </div>
                                         <div class="portfolio-info">
                                             <div class="portfolio-info-inner">
-                                                <h5><a class="title-link" href="{{URL('product/'.$product->slug)}}">{{$product->name}}</a></h5>
-                                                <p class="portfolio-cates">{{$category->name}}</p> 
+                                                <h5 class="bFont"><a class="title-link" href="{{URL('product/'.$product->slug)}}">{{$product->name}}</a></h5>
+                                                <p class="portfolio-cates"><span class="aFont">{{$category->name}}</span></p> 
                                             </div>
                                             <a class="overlay" href="portfolio-standar.html"></a>
                                         </div>

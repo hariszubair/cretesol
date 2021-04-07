@@ -29,11 +29,11 @@
      left: 0; 
 }
 .icon-box--is-line-hover:hover {
--webkit-filter: brightness(110%) !important;
+-webkit-filter: brightness(80%) !important;
 
 }
 .icon-box--is-line-hover:hover div h2{
-color:black !important;
+color:grey !important;
 }
 .is-stuck {
     opacity: 90%;
@@ -73,6 +73,12 @@ color:black !important;
     font-family:'navBarFont'
 }
 .sliderFont{
+    font-family:'sliderFont'
+}
+.aFont{
+    font-family:'navBarFont'
+}
+.bFont{
     font-family:'sliderFont'
 }
 </style>
