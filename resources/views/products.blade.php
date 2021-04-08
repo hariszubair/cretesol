@@ -150,6 +150,7 @@
                             <div class="projects-grid pf_4_cols style-2 p-info-s2 img-scale w-auto projects-metro">
                                 <div class="grid-sizer"></div>
                                 @foreach($products as $key=> $product)
+                                @if(count($products) % 2 == 0 || $key < count($products) -1)
                                 
                                 <div class="project-item thumb2x" >
                                     <div class="projects-box">
@@ -171,6 +172,28 @@
                                         </div>
                                     </div>
                                 </div>
+                                @else
+                                <div class="project-item thumb2x" style="margin-left:25%">
+                                    <div class="projects-box">
+                                        <div class="projects-thumbnail">
+                                            <a  href="{{URL('product/'.$product->slug)}}">
+                                                <img src="{{URL($product->image)}}" alt="{{$product->image}}" style="height:300px;object-fit:cover"> 
+                                            </a>
+                                            <div class="overlay">
+                                                <h5>{{$product->name}}</h5>
+                                                <i class="ot-flaticon-add"></i>
+                                            </div>
+                                        </div>
+                                        <div class="portfolio-info">
+                                            <div class="portfolio-info-inner">
+                                                <h5 class="bFont"><a class="title-link" href="{{URL('product/'.$product->slug)}}">{{$product->name}}</a></h5>
+                                                <p class="portfolio-cates"><span class="aFont">{{$category->name}}</span></p> 
+                                            </div>
+                                            <a class="overlay" href="portfolio-standar.html"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif                                
                                 @endforeach
                                
                             </div>

@@ -133,7 +133,7 @@
                             <div class="projects-grid pf_4_cols style-2 p-info-s2 img-scale w-auto projects-metro">
                                 <div class="grid-sizer"></div>
                                 @foreach($category->sub_category as $key=> $sub_category)
-                                
+                                @if(count($category->sub_category) % 2 == 0 || $key < count($category->sub_category) -1)
                                 <div class="project-item thumb2x" >
                                     <div class="projects-box">
                                         <div class="projects-thumbnail">
@@ -154,6 +154,28 @@
                                         </div>
                                     </div>
                                 </div>
+                                @else
+                                <div class="project-item thumb2x" style="margin-left: 25%">
+                                    <div class="projects-box">
+                                        <div class="projects-thumbnail">
+                                            <a  href="{{URL('sub_category/'.$sub_category->slug)}}">
+                                                <img src="{{URL($sub_category->image)}}" alt="{{$sub_category->image}}" style="height:300px;object-fit:cover"> 
+                                            </a>
+                                            <div class="overlay">
+                                                <h5>{{$sub_category->name}}</h5>
+                                                <i class="ot-flaticon-add"></i>
+                                            </div>
+                                        </div>
+                                        <div class="portfolio-info">
+                                            <div class="portfolio-info-inner">
+                                                <h5 class="bFont"><a class="title-link" href="{{URL('sub_category/'.$sub_category->slug)}}">{{$sub_category->name}}</a></h5>
+                                                <p class="portfolio-cates"><span class="aFont">{{$category->name}}</span></p> 
+                                            </div>
+                                            <a class="overlay" href="portfolio-standar.html"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
                                 @endforeach
                             </div>
                         </div>

@@ -478,13 +478,10 @@
                     @foreach($categories as $category)
                     <a href="{{URL('category/'.$category->slug)}}" >
                         <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="icon-box icon-box--bg-img icon-box--icon-top icon-box--is-line-hover text-center cat" style="background-image: url('{{substr($category->image, 1)}}');height: 300px;object-fit: cover;-webkit-filter: brightness(100%);">
-                                <div class="content-box">
-                                    <h2 style="color: white;background:black;border-radius:12px;opacity:80%" class="bFont" >{{$category->name}}</h2>
-                                    
-                                </div>
-                                <div class="link-box">
-                                    <a href="{{URL('category/'.$category->slug)}}" class="btn-details" style="font-size:14px">VIEW MORE</a>
+                            <div class="icon-box icon-box--bg-img icon-box--icon-top icon-box--is-line-hover text-center cat" style="height: 300px;-webkit-filter: brightness(100%);padding: 0">
+                                <img src="{{asset($category->image)}}" style="height: 300px;object-fit: cover;  ">
+                                <div style="position:absolute;left:50%;top:50%;transform: translate(-50%,-50%);">
+                                     <a href="{{URL('category/'.$category->slug)}}" style="font-size:14px"><h2 style="color: white;background:black;border-radius:12px;opacity:80%;padding: 10px" class="bFont" >{{$category->name}}</h2></a>
                                 </div>
                             </div>
                         </div>
