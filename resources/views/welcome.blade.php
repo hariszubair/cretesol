@@ -451,7 +451,7 @@
                                 <div class="cate-item">
                                         <img src="images/residential.jpg" alt="Cretesol-residential-interior" style="height:250px;width:100%;object-fit:cover">
                                     <div class="cate-item_content">
-                                       <h2 class="aFont">Residential </h2><h2 class="aFont">Spaces</h2>
+                                       <h2 class="aFont">Residential Spaces</h2>
                                     </div>
                                 </div>
                             </div>
@@ -481,7 +481,7 @@
                             <div class="icon-box icon-box--bg-img icon-box--icon-top icon-box--is-line-hover text-center cat" style="height: 300px;-webkit-filter: brightness(100%);padding: 0">
                                 <img src="{{asset($category->image)}}" style="height: 300px;object-fit: cover;width: 100%">
                                 <div style="position:absolute;left:50%;top:50%;transform: translate(-50%,-50%);">
-                                     <a href="{{URL('category/'.$category->slug)}}" style="font-size:14px"><h2 style="color: white;background:black;border-radius:12px;opacity:80%;padding: 10px" class="bFont" >{{$category->name}}</h2></a>
+                                     <a href="{{URL('category/'.$category->slug)}}" style="font-size:8px"><h6 style="color: white;background:black;padding-left:40px;padding-right:40px;" class="bFont" >{{$category->name}}</h6></a>
                                 </div>
                             </div>
                         </div>

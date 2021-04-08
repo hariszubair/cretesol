@@ -4422,8 +4422,9 @@ object {
 }
 .cate-lines .cate-item_content {
   position: absolute;
-  bottom: 67px;
+  bottom: 10px;
   left: 60px;
+  padding-left: 20px;
 }
 .cate-lines img {
   filter: brightness(80%);
@@ -4488,11 +4489,11 @@ object {
 
 @media (min-width: 1024px) and (max-width: 1200px) {
   .cate-lines .cate-item_content {
-    bottom: 56px;
+    bottom: 10px;
     left: 50px;
   }
   .cate-lines h2 {
-    font-size: 36px;
+    font-size: 18px;
   }
   .cate-lines .number-stroke {
     font-size: 100px;
@@ -4501,7 +4502,7 @@ object {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .cate-lines .cate-item_content {
-    bottom: 35px;
+    bottom: 10px;
     left: 30px;
   }
   .cate-lines h2 {
@@ -4513,7 +4514,7 @@ object {
 }
 @media (max-width: 479px) {
   .cate-lines .cate-item_content {
-    bottom: 40px;
+    bottom: 10px;
     left: 40px;
   }
   .cate-lines h2 {
