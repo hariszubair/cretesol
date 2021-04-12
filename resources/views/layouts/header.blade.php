@@ -77,9 +77,12 @@ color:grey !important;
 }
 .aFont{
     font-family:'navBarFont'
-}
+} 
 .bFont{
     font-family:'sliderFont'
+}
+#tawkchat-chat-bubble-close{
+display: none !important;
 }
 </style>
 <body>

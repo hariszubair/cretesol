@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "08fe2cce8fa93c9de88ed1169a2190e5",
+    "content-hash": "9a0dc07ca496f7fe825f49f318fcb600",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -593,6 +593,60 @@
                 }
             ],
             "time": "2020-10-22T13:57:20+00:00"
+        },
+        {
+            "name": "genealabs/laravel-tawk",
+            "version": "8.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GeneaLabs/laravel-tawk.git",
+                "reference": "e7e0592405cc988d1eba1290d3bc19f01b42d51f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GeneaLabs/laravel-tawk/zipball/e7e0592405cc988d1eba1290d3bc19f01b42d51f",
+                "reference": "e7e0592405cc988d1eba1290d3bc19f01b42d51f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8.0",
+                "illuminate/view": "^8.0"
+            },
+            "type": "laravel-package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "GeneaLabs\\LaravelTawk\\Providers\\Service"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GeneaLabs\\LaravelTawk\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Bronner",
+                    "email": "mike@genealabs.com"
+                }
+            ],
+            "description": "Integrate Tawk.to into yoru Laravel and Nova apps.",
+            "support": {
+                "issues": "https://github.com/GeneaLabs/laravel-tawk/issues",
+                "source": "https://github.com/GeneaLabs/laravel-tawk/tree/8.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/mikebronner",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-09-15T19:02:55+00:00"
         },
         {
             "name": "graham-campbell/result-type",
