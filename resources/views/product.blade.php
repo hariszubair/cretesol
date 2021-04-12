@@ -16,7 +16,7 @@
                             <div class="octf-mainbar-row octf-row">
                                 <div class="octf-col logo-col no-padding">
                                     <div id="site-logo" class="site-logo">
-                                        <a href="index.html">
+                                        <a href="{{URL('')}}">
                                             <img id="main_logo" src="{{asset('public/images/dark-logo.png')}}" alt="Cretesol" class="" >
                                         </a>
                                     </div>
@@ -34,11 +34,11 @@
                                                     @endforeach
                                                 </ul>
                                             </li>
-                                            <li class=""><a href="#">Projects</a>
+                                            <li class=""><a href="{{URL('projects')}}">Projects</a>
                                             </li>
                                             
-                                            <li><a href="contact.html">Contact Us</a></li>
-                                            <li><a href="contact.html">Clients</a></li>
+                                            <li><a href="{{URL('contact_us')}}">Contact Us</a></li>
+                                            <li><a href="{{URL('clients')}}">Clients</a></li>
 
                                         </ul>
                                     </nav>
@@ -54,7 +54,7 @@
                         <div class="octf-col">
                             <div class="mlogo_wrapper clearfix">
                                 <div class="mobile_logo">
-                                    <a href="index.html">
+                                    <a href="{{URL('')}}">
                                         <img src="{{asset('public/images/dark-logo.png')}}" alt="Cretesol" >
                                     </a>
                                 </div>
@@ -86,7 +86,7 @@
                                         <div class="mobile-nav">
                                             <ul id="menu-main-menu" class="mobile_mainmenu none-style" style="font-family:'navBarFont'">
                                                 <li class=" current-menu-item current-menu-ancestor">
-                                                <a href="index.html">Home</a>
+                                                <a href="{{URL('')}}">Home</a>
                                             </li>
                                             <li class="menu-item-has-children"><a href="#">Products</a>
                                                 <ul class="sub-menu">
@@ -95,11 +95,11 @@
                                                     <li><a href="">Waterjet & Mosaic</a></li>
                                                 </ul>
                                             </li>
-                                            <li class=""><a href="#">Projects</a>
+                                            <li class=""><a href="{{URL('projects')}}">Projects</a>
                                             </li>
                                             
-                                            <li><a href="contact.html">Contact Us</a></li>
-                                            <li><a href="contact.html">Clients</a></li>
+                                            <li><a href="{{URL('contact_us')}}">Contact Us</a></li>
+                                            <li><a href="{{URL('clients')}}">Clients</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -116,7 +116,7 @@
                     <div class="container" style="font-family:'sliderFont'">
                         <h1 class="page-title" style="font-family:'sliderFont'">{{$product->name}}</h1>
                         <ul id="breadcrumbs" class="breadcrumbs none-style">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="{{URL('')}}">Home</a></li>
                             @if($product->category_id)
                             <li><a href="portfolio-masonry.html">{{$product->category->name}}</a></li>
                             @endif
@@ -139,7 +139,7 @@
                             <div class="gallery-post img-slider owl-carousel owl-theme">
                             @foreach($product->images as $image)   
                             <div class="item-image">
-                                    <img src="{{URL($image->image)}}" alt="" style="height:500px;width:100%;object-fit:cover">
+                                    <img src="{{URL($image->image)}}" alt="Cretesol-{{$product->name}}" style="height:500px;width:100%;object-fit:cover">
                             </div>
                             @endforeach
                         </div>
@@ -161,7 +161,7 @@
                                                 <div class="projects-box">
                                                     <div class="projects-thumbnail">
                                                         <a href="{{URL('product/'.$product->slug)}}">
-                                                            <img src="{{URL($product->images->first()->image)}}" alt="" style="height: 300px;object-fit:cover">
+                                                            <img src="{{URL($product->images->first()->compressed_image)}}" alt="Cretesol-{{$product->name}}" style="height: 300px;object-fit:cover">
                                                         </a>
                                                         <span class="overlay">
                                                             <h5>{{$product->name}}</h5>

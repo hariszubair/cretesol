@@ -14,7 +14,8 @@ class Product extends Model
     	'third_category_id',
      	'name',
          'slug',
-     	'image'
+     	'image',
+         'compressed_image'
      ];
      public function category(){
 

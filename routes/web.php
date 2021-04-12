@@ -28,6 +28,12 @@ Route::get('/category/{id}', [App\Http\Controllers\HomeController::class, 'categ
 Route::get('/sub_category/{id}', [App\Http\Controllers\HomeController::class, 'sub_category'])->name('sub_category');
 Route::get('/third_category/{id}', [App\Http\Controllers\HomeController::class, 'third_category'])->name('third_category');
 Route::get('/product/{id}', [App\Http\Controllers\HomeController::class, 'product'])->name('product');
+Route::get('/contact_us', [App\Http\Controllers\HomeController::class, 'contact_us'])->name('contact_us');
+Route::post('/contact_form', [App\Http\Controllers\HomeController::class, 'contact_form'])->name('contact_form');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
+Route::get('/delete_contact/{id}', [App\Http\Controllers\HomeController::class, 'delete_contact'])->name('delete_contact');
+Route::get('projects', [App\Http\Controllers\HomeController::class, 'projects'])->name('projects');
+Route::get('clients', [App\Http\Controllers\HomeController::class, 'clients'])->name('clients');
 
 
 
@@ -77,6 +83,22 @@ Route::delete('/admin/product/delete_image/{id}', [App\Http\Controllers\ProductC
 Route::post('/admin/add_image', [App\Http\Controllers\ProductController::class, 'add_image'])->name('admin.add_image');
 
 
+//Projects
+Route::get('admin/projects', [App\Http\Controllers\ProjectController::class, 'projects'])->name('admin.projects');
+Route::post('/admin/add_project', [App\Http\Controllers\ProjectController::class, 'add_project'])->name('admin.add_project');
+Route::post('/admin/edit_project', [App\Http\Controllers\ProjectController::class, 'edit_project'])->name('admin.edit_project');
+Route::get('/admin/delete_project/{id}', [App\Http\Controllers\ProjectController::class, 'delete_project'])->name('admin.delete_project');
+
+//Clients
+Route::get('admin/clients', [App\Http\Controllers\ClientController::class, 'clients'])->name('admin.clients');
+Route::post('/admin/add_client', [App\Http\Controllers\ClientController::class, 'add_client'])->name('admin.add_client');
+Route::post('/admin/edit_client', [App\Http\Controllers\ClientController::class, 'edit_client'])->name('admin.edit_client');
+Route::get('/admin/delete_client/{id}', [App\Http\Controllers\ClientController::class, 'delete_client'])->name('admin.delete_client');
+
+
+//Misc Controller
+Route::get('admin/misc_images', [App\Http\Controllers\MiscController::class, 'misc_images'])->name('admin.misc_images');
+Route::post('/admin/edit_image', [App\Http\Controllers\MiscController::class, 'edit_image'])->name('admin.edit_image');
 
 
 

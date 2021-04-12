@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\SubCategory;
 use App\Models\ThirdCategory;
 use Yajra\Datatables\Datatables;
+use Intervention\Image\Facades\Image as Image;
+
 class ThirdCategoryController extends Controller
 {
     public function __construct()
@@ -30,9 +32,12 @@ class ThirdCategoryController extends Controller
             $name= time().'.'.$name_array[0];
             $file->move(public_path('images/assets/'), $name);
             $input['image']='/images/assets/'.$name;
+            $image=Image::make(public_path($input['image']))->resize(540, 300);
+            $image->save(public_path('images/assets/compressed_'.$name));
+            $input['compressed_image']='/images/assets/'.$name;
         }
         ThirdCategory::create($input);
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Record Added successfully!!!');
     }
     public function edit_third_category(Request $request)
     {
@@ -47,10 +52,16 @@ class ThirdCategoryController extends Controller
        		if(file_exists(public_path($cat->image))) {
             unlink(public_path($cat->image));
         }
+            if(file_exists(public_path($cat->compressed_image))) {
+            unlink(public_path($cat->compressed_image));
+        }
             $name_array=array_map('strrev', explode('.', strrev($file->getClientOriginalName())));   
             $name= time().'.'.$name_array[0];
             $file->move(public_path('imagesassets//'), $name);
             $input['image']='/images/assets/'.$name;
+            $image=Image::make(public_path($input['image']))->resize(540, 300);
+            $image->save(public_path('images/assets/compressed_'.$name));
+            $input['compressed_image']='/images/assets/'.$name;
         }
         $input['name']=$request->name;
         $input['slug']=$request->slug;
@@ -60,13 +71,18 @@ class ThirdCategoryController extends Controller
         return redirect()->back();
     }
      public function delete_third_category($id){
-            return $id;
     		$cat=ThirdCategory::find($id);
+            if(count($cat->products) > 0){
+                return redirect()->back()->withErrors(['This category can\'t be deleted, because it contains Sub Category or products']);
+            }
     		if(file_exists(public_path($cat->image))) {
             unlink(public_path($cat->image));
         	}
+            if(file_exists(public_path($cat->compressed_image))) {
+            unlink(public_path($cat->compressed_image));
+            }
     		$cat->delete();
-    		return redirect()->back();
+    		return redirect()->back()->with('message', 'Record deleted successfully!!!');
     }	
     public function get_third_category(Request $request){
         return ThirdCategory::where('parent_category_id',$request->parent_id)->get();

@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductsImage;
 use App\Models\Category;
+use App\Models\Client;
 use App\Models\SubCategory;
 use App\Models\ThirdCategory;
+use App\Models\Contact;
+use App\Models\MiscImage;
+use App\Models\Project;
 class HomeController extends Controller
 {
     /**
@@ -36,7 +40,8 @@ class HomeController extends Controller
     public function welcome()
     {
         $categories=Category::all();
-        return view('welcome',compact('categories'));
+        $images=MiscImage::all();
+        return view('welcome',compact('categories','images'));
     }
     public function stones()
     {
@@ -91,5 +96,31 @@ class HomeController extends Controller
         }
         $category=Category::find($product->category_id);
         return view('product',compact('product','category','other_products'));
+    }
+    public function contact_us()
+    {
+        return view('contact_us');
+    }
+    public function contact_form(Request $request)
+    {
+        $input=$request->all();
+        Contact::create($input);
+    }
+    public function dashboard(){
+        $contacts=Contact::orderBy('created_at','desc')->get();
+        return view('dashboard',compact('contacts'));
+    }
+    public function delete_contact($id){
+        Contact::find($id)->delete();
+        return redirect()->back()->with('message', 'Record deleted successfully!!!');
+
+    }
+    public function projects(){
+        $projects=Project::orderBy('created_at','desc')->get();
+        return view('projects',compact('projects'));
+    }
+    public function clients(){
+        $clients=Client::orderBy('created_at','desc')->get();
+        return view('clients',compact('clients'));
     }
 }

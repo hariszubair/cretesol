@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use Yajra\Datatables\Datatables;
+use Intervention\Image\Facades\Image as Image;
+
 class CategoryController extends Controller
 {
     public function __construct()
@@ -13,6 +15,7 @@ class CategoryController extends Controller
     }
    public function category()
     {
+        
     	$records=Category::all();
         return view('admin.category',compact('records'));
     }
@@ -38,9 +41,12 @@ class CategoryController extends Controller
             $name= time().'.'.$name_array[0];
             $file->move(public_path('images/assets'), $name);
             $input['image']='/images/assets/'.$name;
+            $image=Image::make(public_path($input['image']))->resize(540, 300);
+            $image->save(public_path('images/assets/compressed_'.$name));
+            $input['compressed_image']='/images/assets/'.$name;
         }
         Category::create($input);
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Record Added successfully!!!');
     }
      public function edit_category(Request $request)
     {
@@ -55,10 +61,16 @@ class CategoryController extends Controller
        		if(file_exists(public_path($cat->image))) {
             unlink(public_path($cat->image));
         }
+        if(file_exists(public_path($cat->compressed_image))) {
+            unlink(public_path($cat->compressed_image));
+        }
             $name_array=array_map('strrev', explode('.', strrev($file->getClientOriginalName())));   
             $name= time().'.'.$name_array[0];
             $file->move(public_path('images/assets'), $name);
             $input['image']='/images/assets/'.$name;
+            $image=Image::make(public_path($input['image']))->resize(540, 300);
+            $image->save(public_path('images/assets/compressed_'.$name));
+            $input['compressed_image']='/images/assets/'.$name;
         }
         $input['name']=$request->name;
         $input['slug']=$request->slug;
@@ -66,11 +78,17 @@ class CategoryController extends Controller
         return redirect()->back();
     }	
     public function delete_category($id){
-    		$cat=Category::find($id);
+    		$cat=Category::with('sub_category','products')->find($id);
+            if(count($cat->sub_category) > 0 ||  count($cat->products) > 0){
+                return redirect()->back()->withErrors(['This category can\'t be deleted, because it contains Sub Category or products']);
+            }
     		if(file_exists(public_path($cat->image))) {
             unlink(public_path($cat->image));
         	}
+            if(file_exists(public_path($cat->compressed_image))) {
+                unlink(public_path($cat->compressed_image));
+            }
     		$cat->delete();
-    		return redirect()->back();
+    		return redirect()->back()->with('message', 'Record deleted successfully!!!');
     }
 }

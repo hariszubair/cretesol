@@ -11,7 +11,7 @@
                             <div class="octf-mainbar-row octf-row">
                                 <div class="octf-col logo-col no-padding">
                                     <div id="site-logo" class="site-logo">
-                                        <a href="index.html">
+                                        <a href="{{URL('')}}">
                                             <img id="main_logo" src="images/dark-logo.png" alt="Cretesol" class="" >
                                         </a>
                                     </div>
@@ -29,11 +29,11 @@
                                                     @endforeach
                                                 </ul>
                                             </li>
-                                            <li class=""><a href="#">Projects</a>
+                                            <li class=""><a href="{{URL('projects')}}">Projects</a>
                                             </li>
                                             
-                                            <li><a href="contact.html">Contact Us</a></li>
-                                            <li><a href="contact.html">Clients</a></li>
+                                            <li><a href="{{URL('contact_us')}}">Contact Us</a></li>
+                                            <li><a href="{{URL('clients')}}">Clients</a></li>
 
                                         </ul>
                                     </nav>
@@ -49,7 +49,7 @@
                         <div class="octf-col">
                             <div class="mlogo_wrapper clearfix">
                                 <div class="mobile_logo">
-                                    <a href="index.html">
+                                    <a href="{{URL('')}}">
                                         <img id="main_logo_mobile" src="images/dark-logo.png" alt="Cretesol" >
                                     </a>
                                 </div>
@@ -81,7 +81,7 @@
                                         <div class="mobile-nav">
                                             <ul id="menu-main-menu" class="mobile_mainmenu none-style" style="font-family:'navBarFont'">
                                                 <li class=" current-menu-item current-menu-ancestor">
-                                                <a href="index.html">Home</a>
+                                                <a href="{{URL('')}}">Home</a>
                                             </li>
                                             <li class="menu-item-has-children"><a href="#">Products</a>
                                                 <ul class="sub-menu">
@@ -90,10 +90,10 @@
                                                     <li><a href="">Waterjet & Mosaic</a></li>
                                                 </ul>
                                             </li>
-                                            <li class=""><a href="#">Projects</a>
+                                            <li class=""><a href="{{URL('projects')}}">Projects</a>
                                             </li>
                                             
-                                            <li><a href="contact.html">Contact Us</a></li>
+                                            <li><a href="{{URL('contact_us')}}">Contact Us</a></li>
                                             <li><a href="contact.html">Clients</a></li>
                                             </ul>
                                         </div>
@@ -213,7 +213,7 @@
                                     data-paddingbottom="[0,0,0,0]"
                                     data-paddingleft="[0,0,0,0]"
                 
-                                    ><a href="portfolio-masonry.html" class="octf-btn octf-btn-primary btn-slider btn-large aFont">View Projects</a>
+                                    ><a href="{{URL('projects')}}" class="octf-btn octf-btn-primary btn-slider btn-large aFont">View Projects</a>
                                 </div>  
                        
                             </li>  
@@ -310,7 +310,7 @@
                                     data-paddingbottom="[0,0,0,0]"
                                     data-paddingleft="[0,0,0,0]"
                 
-                                    ><a href="portfolio-masonry.html" class="octf-btn octf-btn-primary btn-slider btn-large aFont">View Projects</a>
+                                    ><a href="{{URL('projects')}}" class="octf-btn octf-btn-primary btn-slider btn-large aFont">View Projects</a>
                                 </div>  
                             </li>  
 
@@ -405,7 +405,7 @@
                                     data-paddingbottom="[0,0,0,0]"
                                     data-paddingleft="[0,0,0,0]"
                 
-                                    ><a href="portfolio-masonry.html" class="octf-btn octf-btn-primary btn-slider btn-large aFont">View Projects</a>
+                                    ><a href="{{URL('projects')}}" class="octf-btn octf-btn-primary btn-slider btn-large aFont">View Projects</a>
                                 </div>  
                             </li>  
                                                     
@@ -426,36 +426,18 @@
             <div>
                 <div class="container-fluid" style="padding-top: 20px">
                     <div class="row justify-content-center">
+                    @foreach($images as $image)
                         <div class="col-lg-4 col-md-6 px-0">
                             <div class="cate-lines">
                                 <div class="cate-item">
-                                        <img src="images/office.jpg" alt="Cretesol-office-interior"  style="height:250px;width:100%;object-fit:cover">
+                                        <img src="{{asset($image->image)}}" alt="Cretesol-office-interior"  style="height:300px;width:100%;object-fit:cover">
                                     <div class="cate-item_content">
-                                        <h2 class="aFont">Office Spaces</h2>
+                                        <h2 class="aFont">{{$image->name}} Spaces</h2>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 px-0">
-                            <div class="cate-lines">
-                                <div class="cate-item">
-                                        <img src="images/public.jpg" alt="Cretesol-public-interior"  style="height:250px;width:100%;object-fit:cover">
-                                    <div class="cate-item_content">
-                                       <h2 class="aFont">Public Spaces</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 px-0">
-                            <div class="cate-lines">
-                                <div class="cate-item">
-                                        <img src="images/residential.jpg" alt="Cretesol-residential-interior" style="height:250px;width:100%;object-fit:cover">
-                                    <div class="cate-item_content">
-                                       <h2 class="aFont">Residential Spaces</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    @endforeach
                     </div>
                 </div>
             </div>
@@ -479,7 +461,7 @@
                     <a href="{{URL('category/'.$category->slug)}}" >
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="icon-box icon-box--bg-img icon-box--icon-top icon-box--is-line-hover text-center cat" style="height: 300px;-webkit-filter: brightness(100%);padding: 0">
-                                <img src="{{asset($category->image)}}" style="height: 300px;object-fit: cover;width: 100%">
+                                <img src="{{asset($category->compressed_image)}}" style="height: 300px;object-fit: cover;width: 100%">
                                 <div style="position:absolute;left:50%;top:50%;transform: translate(-50%,-50%);">
                                      <a href="{{URL('category/'.$category->slug)}}" style="font-size:8px"><h6 style="color: white;background:black;padding-left:40px;padding-right:40px;" class="bFont" >{{$category->name}}</h6></a>
                                 </div>
@@ -545,7 +527,7 @@
                         </div>
                         <div class="col-lg-4 text-left text-lg-right align-self-center">
                             <div class="ot-button">
-                                <a href="contact.html" class="octf-btn octf-btn-light border-hover-light aFont">get in touch</a>
+                                <a href="{{URL('contact_us')}}" class="octf-btn octf-btn-light border-hover-light aFont">get in touch</a>
                             </div>
                         </div>
                     </div>
@@ -554,10 +536,7 @@
             
         </div>
          <script>
-             $(".cat").click(function() {
-  window.location = $(this).find("a").attr("href"); 
-  return false;
-});
+             
          </script>
         @endsection
         

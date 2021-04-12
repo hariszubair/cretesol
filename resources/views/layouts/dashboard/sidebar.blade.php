@@ -32,9 +32,17 @@
         <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+               <li class="nav-item">
+              <a href="{{URL('dashboard')}}" class="nav-link ">
+              <i class="fas fa-envelope"></i>
+              <p>
+                Contact Us Form
+              </p>
+            </a>
+            </li>
                 <li class="nav-item">
               <a href="{{URL('admin/category')}}" class="nav-link ">
-              <i class="nav-icon fas fa-users"></i>
+              <i class="fas fa-dice-one"></i>
               <p>
                 Category
               </p>
@@ -42,7 +50,7 @@
             </li>
             <li class="nav-item">
             <a href="{{URL('admin/sub_category')}}" class="nav-link ">
-              <i class="nav-icon fas fa-clipboard"></i>
+            <i class="fas fa-dice-two"></i>
               <p>
                 Sub Category
               </p>
@@ -51,7 +59,7 @@
           </li >
           <li class="nav-item">
             <a href="{{URL('admin/third_category')}}" class="nav-link ">
-              <i class="nav-icon fas fa-clipboard"></i>
+            <i class="fas fa-dice-three"></i>
               <p>
                 Third Category
               </p>
@@ -60,10 +68,36 @@
           </li >
           <li class="nav-item" >
             <a href="{{URL('admin/product')}}" class="nav-link">
-              <i class="nav-icon fas fa-database"></i>
+            <i class="fas fa-boxes"></i>
               <p>
                 Products
                 
+              </p>
+            </a>
+          </li>
+            <li class="nav-item" >
+            <a href="{{URL('admin/projects')}}" class="nav-link">
+            <i class="fas fa-project-diagram"></i>
+              <p>
+                Projects
+                
+              </p>
+            </a>
+            </li>
+            <li class="nav-item" >
+            <a href="{{URL('admin/clients')}}" class="nav-link">
+            <i class="fas fa-users"></i>
+              <p>
+                Clients
+                
+              </p>
+            </a>
+            </li>
+            <li class="nav-item" >
+            <a href="{{URL('admin/misc_images')}}" class="nav-link">
+            <i class="fas fa-users"></i>
+              <p>
+                Other Images
               </p>
             </a>
             </li>
