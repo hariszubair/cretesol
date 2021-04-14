@@ -46,6 +46,7 @@
                             <th class="th-sm">Name</th>
                             <th class="th-sm">Email</th>
                             <th class="th-sm" >Number</th>
+                            <th class="th-sm" >Origin</th>
                             <th class="th-sm" style="width: 30%">Message</th>
                             <th>Action</th>
                         </tr>
@@ -57,6 +58,7 @@
                         <td>{{$contact->name}}</td>
                         <td>{{$contact->email}}</td>
                         <td>{{$contact->number}}</td>
+                        <td>{{$contact->type}}</td>
                         <td>{!! nl2br(e($contact->message)) !!}</td>
                         <td><a class="btn btn-danger" href="{{URL('delete_contact/'.$contact->id)}}" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></a></td>
                     </tr>

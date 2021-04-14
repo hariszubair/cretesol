@@ -5,17 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class Count extends Model
 {
     use HasFactory;
     protected $fillable =[
-        'id',
-        'name',
-        'email',
-        'number',
-        'message',
-        'type',
-        'created_at',
-        'updated_at'
+        'current_client','yr_exp','awards','offices'
     ];
 }

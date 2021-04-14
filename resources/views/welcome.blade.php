@@ -477,8 +477,8 @@
                             <div class="ot-counter">
                                 <div>
                                     <span>[</span>
-                                    <span class="num" data-to="180" data-time="2000">180</span>
-                                    <span>+]</span>
+                                    <span class="num" data-to="{{$count->current_client}}" data-time="2000">{{$count->current_client}}</span>
+                                    <span>]</span>
                                 </div>
                                 <h6 class="aFont"> <b>Current Clients</b> </h6>                            
                             </div>
@@ -487,8 +487,8 @@
                             <div class="ot-counter">
                                 <div>
                                     <span>[</span>
-                                    <span class="num" data-to="10" data-time="2000">10</span>
-                                    <span>+]</span>
+                                    <span class="num" data-to="{{$count->yr_exp}}" data-time="2000">{{$count->yr_exp}}</span>
+                                    <span>]</span>
                                 </div>
                                 <h6 class="aFont">years of experience</h6>                            
                             </div>
@@ -497,8 +497,8 @@
                             <div class="ot-counter">
                                 <div>
                                     <span>[</span>
-                                    <span class="num" data-to="35" data-time="2000">35</span>
-                                    <span>+]</span>
+                                    <span class="num" data-to="{{$count->awards}}" data-time="2000">{{$count->awards}}</span>
+                                    <span>]</span>
                                 </div>
                                 <h6 class="aFont">awards winning</h6>                             
                             </div>
@@ -507,8 +507,8 @@
                             <div class="ot-counter">
                                 <div>
                                     <span>[</span>
-                                    <span class="num" data-to="5" data-time="2000">5</span>
-                                    <span>+]</span>
+                                    <span class="num" data-to="{{$count->offices}}" data-time="2000">{{$count->offices}}</span>
+                                    <span>]</span>
                                 </div>
                                 <h6 class="aFont">Offices Worldwide</h6>                              
                             </div>

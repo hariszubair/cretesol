@@ -134,6 +134,18 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
+Tawk_API.onOfflineSubmit = function(data){
+    //place your code here
+    $.ajax({
+          headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          },
+            url:'./tawk_form',
+            data:{name:data.questions[1].answer, number:data.questions[2].answer,email:data.questions[3].answer,message:data.questions[4].answer},
+            type:'POST',
+          });
+};
+$('#greetingsMainContainer').css("background-color", "#2a2828");
     </script>  
 <script src="{{asset('public/js/mousewheel.min.js')}}"></script>
 <script src="{{asset('public/js/lightgallery-all.min.js')}}"></script>

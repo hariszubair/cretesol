@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\MiscImage;
+use App\Models\Count;
 use Intervention\Image\Facades\Image as Image;
 
 class MiscController extends Controller
@@ -31,6 +32,15 @@ class MiscController extends Controller
            $input['image']='/images/assets/'.$name; 
         }
         MiscImage::where('id',$request->image_id)->update($input);
+        return redirect()->back()->with('message', 'Record Updated Successfully!!!');
+    }
+    public function count(){
+        $count=Count::first();
+        return view('admin.count',compact('count'));
+    }
+    public function edit_count(Request $request){
+        $input=$request->all();
+        Count::first()->update($input);
         return redirect()->back()->with('message', 'Record Updated Successfully!!!');
     }
 }

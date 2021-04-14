@@ -101,6 +101,14 @@
               </p>
             </a>
             </li>
+            <li class="nav-item" >
+            <a href="{{URL('admin/count')}}" class="nav-link">
+            <i class="fas fa-users"></i>
+              <p>
+                Count
+              </p>
+            </a>
+            </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

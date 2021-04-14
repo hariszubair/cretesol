@@ -30,6 +30,7 @@ Route::get('/third_category/{id}', [App\Http\Controllers\HomeController::class, 
 Route::get('/product/{id}', [App\Http\Controllers\HomeController::class, 'product'])->name('product');
 Route::get('/contact_us', [App\Http\Controllers\HomeController::class, 'contact_us'])->name('contact_us');
 Route::post('/contact_form', [App\Http\Controllers\HomeController::class, 'contact_form'])->name('contact_form');
+Route::post('/tawk_form', [App\Http\Controllers\HomeController::class, 'tawk_form'])->name('tawk_form');
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 Route::get('/delete_contact/{id}', [App\Http\Controllers\HomeController::class, 'delete_contact'])->name('delete_contact');
 Route::get('projects', [App\Http\Controllers\HomeController::class, 'projects'])->name('projects');
@@ -99,6 +100,8 @@ Route::get('/admin/delete_client/{id}', [App\Http\Controllers\ClientController::
 //Misc Controller
 Route::get('admin/misc_images', [App\Http\Controllers\MiscController::class, 'misc_images'])->name('admin.misc_images');
 Route::post('/admin/edit_image', [App\Http\Controllers\MiscController::class, 'edit_image'])->name('admin.edit_image');
+Route::get('/admin/count', [App\Http\Controllers\MiscController::class, 'count'])->name('admin.count');
+Route::post('/admin/edit_count', [App\Http\Controllers\MiscController::class, 'edit_count'])->name('admin.edit_count');
 
 
 

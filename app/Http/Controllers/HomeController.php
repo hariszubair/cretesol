@@ -12,6 +12,7 @@ use App\Models\ThirdCategory;
 use App\Models\Contact;
 use App\Models\MiscImage;
 use App\Models\Project;
+use App\Models\Count;
 class HomeController extends Controller
 {
     /**
@@ -39,9 +40,10 @@ class HomeController extends Controller
     }
     public function welcome()
     {
+        $count=Count::first();
         $categories=Category::all();
         $images=MiscImage::all();
-        return view('welcome',compact('categories','images'));
+        return view('welcome',compact('categories','images','count'));
     }
     public function stones()
     {
@@ -104,6 +106,7 @@ class HomeController extends Controller
     public function contact_form(Request $request)
     {
         $input=$request->all();
+        $input['type']='Website Form';
         Contact::create($input);
     }
     public function dashboard(){
@@ -122,5 +125,11 @@ class HomeController extends Controller
     public function clients(){
         $clients=Client::orderBy('created_at','desc')->get();
         return view('clients',compact('clients'));
+    }
+    public function tawk_form(Request $request)
+    {
+        $input=$request->all();
+        $input['type']='Tawk.to Form';
+        Contact::create($input);
     }
 }

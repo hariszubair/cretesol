@@ -151,7 +151,7 @@
                             <div class="project-bottom">
                                 <div class="portfolio-related-posts-wrap">
                                     <div class="portfolio-related-title-wrap">
-                                        <h2 class="portfolio-related-title">Related Projects</h2>
+                                        <h2 class="portfolio-related-title">Related Products</h2>
                                     </div>
                                     <div class="row">
                                         <div class="projects-grid pf_3_cols style-1 img-scale w-auto m-0">
