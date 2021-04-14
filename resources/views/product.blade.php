@@ -157,11 +157,12 @@
                                         <div class="projects-grid pf_3_cols style-1 img-scale w-auto m-0">
                                         @if(count($other_products) > 0)
                                         @foreach($other_products as $product)
+                                        @if($product->first_image)
                                         <div class="project-item" >
                                                 <div class="projects-box">
                                                     <div class="projects-thumbnail">
                                                         <a href="{{URL('product/'.$product->slug)}}">
-                                                            <img src="{{URL($product->images->first()->compressed_image)}}" alt="Cretesol-{{$product->name}}" style="height: 300px;object-fit:cover">
+                                                            <img src="{{asset($product->first_image->compressed_image)}}" alt="Cretesol-{{$product->name}}" style="height: 300px;object-fit:cover">
                                                         </a>
                                                         <span class="overlay">
                                                             <h5>{{$product->name}}</h5>
@@ -178,7 +179,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+                                            @endif
                                         @endforeach
                                         @endif
                                     </div>

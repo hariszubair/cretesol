@@ -86,16 +86,18 @@ class HomeController extends Controller
     }
     public function product($id)
     {
-        $product=Product::where('slug',$id)->first();
+        
+        $product=Product::with('images','first_image')->where('slug',$id)->first();
         if($product->third_category_id){
-            $other_products=Product::where('third_category_id',$product->third_category_id)->where('slug','!=',$id)->take(3)->get();
+            $other_products=Product::with('first_image')->where('third_category_id',$product->third_category_id)->where('slug','!=',$id)->take(3)->get();
         }
         else if($product->sub_category_id){
-            $other_products=Product::where('sub_category_id',$product->sub_category_id)->where('slug','!=',$id)->take(3)->get();
+            $other_products=Product::with('first_image')->where('sub_category_id',$product->sub_category_id)->where('slug','!=',$id)->take(3)->get();
         }
         else if($product->category_id){
-            $other_products=Product::where('category_id',$product->category_id)->where('slug','!=',$id)->take(3)->get();
+            $other_products=Product::with('first_image')->where('category_id',$product->category_id)->where('slug','!=',$id)->take(3)->get();
         }
+        // return $other_products;
         $category=Category::find($product->category_id);
         return view('product',compact('product','category','other_products'));
     }

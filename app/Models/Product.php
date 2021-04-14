@@ -37,4 +37,9 @@ class Product extends Model
         return $this->hasMany('App\Models\ProductsImage');
 
     }
+    public function first_image(){
+
+        return $this->hasOne('App\Models\ProductsImage');
+
+    }
 }
