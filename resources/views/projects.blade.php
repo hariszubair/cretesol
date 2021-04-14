@@ -128,7 +128,7 @@
             <div class="page-header dtable text-center header-transparent page-header-contact" style="background-image: url({{asset('images/pheader-contact.jpg')}});">
                 <div class="dcell">
                     <div class="container  bFont">
-                        <h1 class="page-title">Projects</h1>
+                        <h1 class="page-title bFont">Projects</h1>
                         <ul id="breadcrumbs" class="breadcrumbs none-style">
                             <li><a href="{{URL('')}}">Home</a></li>
                             <li class="active">Projects</li>
