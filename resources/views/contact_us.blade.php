@@ -110,8 +110,8 @@
         <div id="content" class="site-content">
             <div class="page-header dtable text-center header-transparent page-header-contact" style="background-image: url({{asset('images/pheader-contact.jpg')}});">
                 <div class="dcell">
-                    <div class="container">
-                        <h1 class="page-title">Contact</h1>
+                    <div class="container bFont">
+                        <h1 class="page-title bFont">Contact</h1>
                         <ul id="breadcrumbs" class="breadcrumbs none-style">
                             <li><a href="index.html">Home</a></li>
                             <li class="active">Contacts</li>
@@ -125,11 +125,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 align-self-center mb-5 mb-lg-0">
-                        <div class="contact-left" id="form">
-                            <h2>Get in Touch</h2>
+                        <div class="contact-left aFont" id="form">
+                            <h2 class="aFont">Get in Touch</h2>
                             <p class="font14">Your email address will not be published. Required fields are marked *</p>
                             <form class="wpcf7" id="contact_form">
-                                <div class="main-form">
+                                <div class="main-form bFont">
                                     <p>
                                         <input type="text" name="name" value="" size="40" class="" aria-invalid="false" placeholder="Your Name *" required>
                                     </p>
@@ -154,25 +154,25 @@
                         <div class="contact-right" style="background-image: url({{asset('images/bg1-contact.jpg')}});">
                             <div class="ot-heading">
                                 <span>[ our contact details ]</span>
-                                <h2 class="main-heading">Let's Start a Project</h2>
+                                <h2 class="main-heading bFont">Let's Start a Project</h2>
                             </div>
-                            <p>Give us a call or drop by anytime, we endeavour to answer all enquiries within 24 hours on business days. We will be happy to answer your questions.</p>
+                            <p class="aFont">Give us a call or drop by anytime, we endeavour to answer all enquiries within 24 hours on business days. We will be happy to answer your questions.</p>
                            
-                            <div class="contact-info">
+                            <div class="contact-info aFont">
                                 <i class="ot-flaticon-mail"></i>
                                 <div class="info-text">
                                     <h6>OUR MAILBOX:</h6>
                                     <p><a href="mailto:marketing@cretesol.com">marketing@cretesol.com</a></p>
                                 </div>
                             </div>
-                            <div class="contact-info">
+                            <div class="contact-info aFont">
                                 <i class="ot-flaticon-phone-call"></i>
                                 <div class="info-text">
                                     <h6>OUR PHONE:</h6>
                                     <p><a href="tel:03358855855">03358855855</a></p>
                                 </div>
                             </div>
-                            <div class="contact-info">
+                            <div class="contact-info aFont">
                                 <i class="ot-flaticon-phone-call"></i>
                                 <div class="info-text">
                                     <h6>OUR PHONE:</h6>

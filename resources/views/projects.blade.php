@@ -127,7 +127,7 @@
         <div id="content" class="site-content">
             <div class="page-header dtable text-center header-transparent page-header-contact" style="background-image: url({{asset('images/pheader-contact.jpg')}});">
                 <div class="dcell">
-                    <div class="container">
+                    <div class="container  bFont">
                         <h1 class="page-title">Projects</h1>
                         <ul id="breadcrumbs" class="breadcrumbs none-style">
                             <li><a href="{{URL('')}}">Home</a></li>
@@ -142,17 +142,17 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center theratio-align-center">
-                        <div class="ot-heading is-dots">
+                        <div class="ot-heading is-dots ">
                             <span>[ our portfolio ]</span>
-                            <h2 class="main-heading">Some of Our Works</h2>
+                            <h2 class="main-heading aFont">Some of Our Works</h2>
                         </div>
                         <div class="space-40"></div>
-                        <div class="project-filter-wrapper">
-                            <ul class="project_filters">
-                                <li><a href="#" data-filter="*" class="selected btn-details">All<span class="filter-count"></span></a></li>
-                                <li><a class="btn-details" href="#" data-filter=".Commercial">Commercial<span class="filter-count"></span></a></li>         
-                                <li><a class="btn-details" href="#" data-filter=".Public">Public<span class="filter-count"></span></a></li>
-                                <li><a class="btn-details" href="#" data-filter=".Residential">Residential<span class="filter-count"></span></a></li>
+                        <div class="project-filter-wrapper ">
+                            <ul class="project_filters aFont">
+                                <li><a href="#" data-filter="*" class="selected btn-details aFont">All<span class="filter-count"></span></a></li>
+                                <li><a class="btn-details aFont" href="#" data-filter=".Commercial">Commercial<span class="filter-count"></span></a></li>         
+                                <li><a class="btn-details aFont" href="#" data-filter=".Public">Public<span class="filter-count"></span></a></li>
+                                <li><a class="btn-details aFont" href="#" data-filter=".Residential">Residential<span class="filter-count"></span></a></li>
                             </ul>
                             <div class="projects-grid pf_3_cols style-4 img-popup img-scale w-auto row justify-content-center" style="height:370px">
                                 <div class="grid-sizer"></div>
