@@ -5,6 +5,9 @@
 .projects-grid.pf_5_cols .project-item.thumb2x, .projects-grid.pf_5_cols .grid-sizer.thumb2x{
     width:50%
 }
+projects-grid .projects-box .portfolio-info {
+    opacity: 1 !important;
+}
 </style>
 <div id="page" class="site">
         <header id="site-header" class="site-header header-transparent">

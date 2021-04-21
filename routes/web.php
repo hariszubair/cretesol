@@ -103,6 +103,11 @@ Route::post('/admin/edit_image', [App\Http\Controllers\MiscController::class, 'e
 Route::get('/admin/count', [App\Http\Controllers\MiscController::class, 'count'])->name('admin.count');
 Route::post('/admin/edit_count', [App\Http\Controllers\MiscController::class, 'edit_count'])->name('admin.edit_count');
 
+//Clients
+Route::get('admin/users', [App\Http\Controllers\UserController::class, 'users'])->name('admin.clients');
+Route::post('/admin/add_user', [App\Http\Controllers\UserController::class, 'add_user'])->name('admin.add_client');
+Route::post('/admin/edit_user', [App\Http\Controllers\UserController::class, 'edit_user'])->name('admin.edit_client');
+Route::get('/admin/delete_user/{id}', [App\Http\Controllers\UserController::class, 'delete_user'])->name('admin.delete_client');
 
 
 Route::get('/clear-cache', function() {

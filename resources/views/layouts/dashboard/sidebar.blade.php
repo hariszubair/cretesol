@@ -40,6 +40,14 @@
               </p>
             </a>
             </li>
+            <li class="nav-item">
+              <a href="{{URL('admin/users')}}" class="nav-link ">
+              <i class="fas fa-dice-one"></i>
+              <p>
+                Users
+              </p>
+            </a>
+            </li>
                 <li class="nav-item">
               <a href="{{URL('admin/category')}}" class="nav-link ">
               <i class="fas fa-dice-one"></i>
