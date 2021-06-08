@@ -2108,7 +2108,7 @@ section.is-stuck {
     position: relative;
   }
   .header_mobile .mlogo_wrapper img {
-    height: 90px;
+    /* height: 90px; */
   }
 
   .header_mobile .mlogo_wrapper .mobile_logo {
@@ -2308,19 +2308,20 @@ section.is-stuck {
     width: 100%;
   }
   .mobile_logo img {
-    max-width: 200px;
-    max-height: 76px;
-    padding-top: 30px;
+    /* max-width: 200px; */
+    /* max-height: 76px; */
+    /* padding-top: 30px; */
+    margin: 30px 0px 0px 10px;
   }
 }
 @media only screen and (max-width: 320px) {
   .mobile_logo img {
-    max-width: 200px;
-    max-height: 76px;
-    padding-top: 30px;
+    /* max-width: 200px; */
+    /* max-height: 76px; */
+    /* padding-top: 30px; */
   }
   .header_mobile .mlogo_wrapper img{
-    height: 50px;
+    /* height: 50px; */
   }
 }
 /*--------------------------------------------------------------
@@ -7164,7 +7165,7 @@ div.elementor-widget-heading .elementor-heading-title {
     padding-right: 15px;
 }
 .header_mobile .mlogo_wrapper img {
-    height: 76px;
+    /* height: 76px; */
 }
 .header_mobile .octf-row{
     display: flex;
