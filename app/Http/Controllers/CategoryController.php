@@ -13,11 +13,11 @@ class CategoryController extends Controller
     {
         $this->middleware('auth');
     }
-   public function category()
+    public function category()
     {
-        
-    	$records=Category::all();
-        return view('admin.category',compact('records'));
+
+        $records = Category::all();
+        return view('admin.category', compact('records'));
     }
     // public function all_category(Request $request)
     // {
@@ -35,60 +35,61 @@ class CategoryController extends Controller
             'name' => 'required|unique:categories,name',
 
         ]);
-    	     $input=$request->all();
-       if($file = $request->file('category_image')){
-            $name_array=array_map('strrev', explode('.', strrev($file->getClientOriginalName())));   
-            $name= time().'.'.$name_array[0];
+        $input = $request->all();
+        if ($file = $request->file('category_image')) {
+            $name_array = array_map('strrev', explode('.', strrev($file->getClientOriginalName())));
+            $name = time() . '.' . $name_array[0];
             $file->move(public_path('images/assets'), $name);
-            $input['image']='/images/assets/'.$name;
-            $image=Image::make(public_path($input['image']))->resize(540, 300);
-            $image->save(public_path('images/assets/compressed_'.$name));
-            $input['compressed_image']='/images/assets/'.$name;
+            $input['image'] = '/images/assets/' . $name;
+            $image = Image::make(public_path($input['image']))->resize(540, 300);
+            $image->save(public_path('images/assets/compressed_' . $name));
+            $input['compressed_image'] = '/images/assets/compressed_' . $name;
         }
         Category::create($input);
         return redirect()->back()->with('message', 'Record Added successfully!!!');
     }
-     public function edit_category(Request $request)
+    public function edit_category(Request $request)
     {
-    	$cat= Category::find($request->id);
+        $cat = Category::find($request->id);
         $validated = $request->validate([
-            'slug' => 'required|unique:categories,slug,'.$cat->id,
-            'name' => 'required|unique:categories,name,'.$cat->id,
+            'slug' => 'required|unique:categories,slug,' . $cat->id,
+            'name' => 'required|unique:categories,name,' . $cat->id,
 
         ]);
-    	$input=[];
-       if($file = $request->file('category_image')){
-       		if(file_exists(public_path($cat->image))) {
-            unlink(public_path($cat->image));
-        }
-        if(file_exists(public_path($cat->compressed_image))) {
-            unlink(public_path($cat->compressed_image));
-        }
-            $name_array=array_map('strrev', explode('.', strrev($file->getClientOriginalName())));   
-            $name= time().'.'.$name_array[0];
-            $file->move(public_path('images/assets'), $name);
-            $input['image']='/images/assets/'.$name;
-            $image=Image::make(public_path($input['image']))->resize(540, 300);
-            $image->save(public_path('images/assets/compressed_'.$name));
-            $input['compressed_image']='/images/assets/'.$name;
-        }
-        $input['name']=$request->name;
-        $input['slug']=$request->slug;
-        Category::where('id',$request->id)->update($input);
-        return redirect()->back();
-    }	
-    public function delete_category($id){
-    		$cat=Category::with('sub_category','products')->find($id);
-            if(count($cat->sub_category) > 0 ||  count($cat->products) > 0){
-                return redirect()->back()->withErrors(['This category can\'t be deleted, because it contains Sub Category or products']);
+        $input = [];
+        if ($file = $request->file('category_image')) {
+            if (file_exists(public_path($cat->image))) {
+                unlink(public_path($cat->image));
             }
-    		if(file_exists(public_path($cat->image))) {
-            unlink(public_path($cat->image));
-        	}
-            if(file_exists(public_path($cat->compressed_image))) {
+            if (file_exists(public_path($cat->compressed_image))) {
                 unlink(public_path($cat->compressed_image));
             }
-    		$cat->delete();
-    		return redirect()->back()->with('message', 'Record deleted successfully!!!');
+            $name_array = array_map('strrev', explode('.', strrev($file->getClientOriginalName())));
+            $name = time() . '.' . $name_array[0];
+            $file->move(public_path('images/assets'), $name);
+            $input['image'] = '/images/assets/' . $name;
+            $image = Image::make(public_path($input['image']))->resize(540, 300);
+            $image->save(public_path('images/assets/compressed_' . $name));
+            $input['compressed_image'] = '/images/assets/compressed_' . $name;
+        }
+        $input['name'] = $request->name;
+        $input['slug'] = $request->slug;
+        Category::where('id', $request->id)->update($input);
+        return redirect()->back();
+    }
+    public function delete_category($id)
+    {
+        $cat = Category::with('sub_category', 'products')->find($id);
+        if (count($cat->sub_category) > 0 ||  count($cat->products) > 0) {
+            return redirect()->back()->withErrors(['This category can\'t be deleted, because it contains Sub Category or products']);
+        }
+        if (file_exists(public_path($cat->image))) {
+            unlink(public_path($cat->image));
+        }
+        if (file_exists(public_path($cat->compressed_image))) {
+            unlink(public_path($cat->compressed_image));
+        }
+        $cat->delete();
+        return redirect()->back()->with('message', 'Record deleted successfully!!!');
     }
 }

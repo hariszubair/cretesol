@@ -38,7 +38,7 @@ class SubCategoryController extends Controller
             $input['image'] = '/images/assets/' . $name;
             $image = Image::make(public_path($input['image']))->resize(540, 300);
             $image->save(public_path('images/assets/compressed_' . $name));
-            $input['compressed_image'] = '/images/assets/' . $name;
+            $input['compressed_image'] = '/images/assets/compressed_' . $name;
         }
         SubCategory::create($input);
         return redirect()->back()->with('message', 'Record Added successfully!!!');
@@ -68,7 +68,7 @@ class SubCategoryController extends Controller
             $input['image'] = '/images/assets/' . $name;
             $image = Image::make(public_path($input['image']))->resize(540, 300);
             $image->save(public_path('images/assets/compressed_' . $name));
-            $input['compressed_image'] = '/images/assets/' . $name;
+            $input['compressed_image'] = '/images/assets/compressed_' . $name;
         }
         $input['name'] = $request->name;
         $input['slug'] = $request->slug;
