@@ -83,5 +83,6 @@ color:grey !important;
 }
 </style>
 <body>
+  
     <div id="royal_preloader"></div>
     
