@@ -12,11 +12,17 @@ class ThirdCategory extends Model
      	'name',
      	'image',
          'slug',
-     	'parent_category_id'
+     	'parent_category_id',
+         'compressed_image'
      ];
      public function parent_category(){
 
         return $this->belongsTo('App\Models\SubCategory', 'parent_category_id');
+
+    }
+    public function products(){
+
+        return $this->hasMany('App\Models\Product');
 
     }
 }

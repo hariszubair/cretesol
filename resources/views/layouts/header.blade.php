@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head>
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Cretesol | Tiles  Stones</title>
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/royal-preload.css')}}" rel="stylesheet">
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
@@ -77,9 +79,15 @@ color:grey !important;
 }
 .aFont{
     font-family:'navBarFont'
-}
+} 
 .bFont{
     font-family:'sliderFont'
+}
+#tawkchat-chat-bubble-close{
+display: none !important;
+}
+.theme-background-color{
+  background-color: #2a2828 !important;
 }
 </style>
 <body>

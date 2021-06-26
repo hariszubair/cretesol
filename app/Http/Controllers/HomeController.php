@@ -6,8 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductsImage;
 use App\Models\Category;
+use App\Models\Client;
 use App\Models\SubCategory;
 use App\Models\ThirdCategory;
+use App\Models\Contact;
+use App\Models\MiscImage;
+use App\Models\Project;
+use App\Models\Count;
 class HomeController extends Controller
 {
     /**
@@ -35,8 +40,10 @@ class HomeController extends Controller
     }
     public function welcome()
     {
+        $count=Count::first();
         $categories=Category::all();
-        return view('welcome',compact('categories'));
+        $images=MiscImage::all();
+        return view('welcome',compact('categories','images','count'));
     }
     public function stones()
     {
@@ -79,17 +86,52 @@ class HomeController extends Controller
     }
     public function product($id)
     {
-        $product=Product::where('slug',$id)->first();
+        
+        $product=Product::with('images','first_image')->where('slug',$id)->first();
         if($product->third_category_id){
-            $other_products=Product::where('third_category_id',$product->third_category_id)->where('slug','!=',$id)->take(3)->get();
+            $other_products=Product::with('first_image')->where('third_category_id',$product->third_category_id)->where('slug','!=',$id)->take(3)->get();
         }
         else if($product->sub_category_id){
-            $other_products=Product::where('sub_category_id',$product->sub_category_id)->where('slug','!=',$id)->take(3)->get();
+            $other_products=Product::with('first_image')->where('sub_category_id',$product->sub_category_id)->where('slug','!=',$id)->take(3)->get();
         }
         else if($product->category_id){
-            $other_products=Product::where('category_id',$product->category_id)->where('slug','!=',$id)->take(3)->get();
+            $other_products=Product::with('first_image')->where('category_id',$product->category_id)->where('slug','!=',$id)->take(3)->get();
         }
+        // return $other_products;
         $category=Category::find($product->category_id);
         return view('product',compact('product','category','other_products'));
+    }
+    public function contact_us()
+    {
+        return view('contact_us');
+    }
+    public function contact_form(Request $request)
+    {
+        $input=$request->all();
+        $input['type']='Website Form';
+        Contact::create($input);
+    }
+    public function dashboard(){
+        $contacts=Contact::orderBy('created_at','desc')->get();
+        return view('dashboard',compact('contacts'));
+    }
+    public function delete_contact($id){
+        Contact::find($id)->delete();
+        return redirect()->back()->with('message', 'Record deleted successfully!!!');
+
+    }
+    public function projects(){
+        $projects=Project::orderBy('created_at','desc')->get();
+        return view('projects',compact('projects'));
+    }
+    public function clients(){
+        $clients=Client::orderBy('created_at','desc')->get();
+        return view('clients',compact('clients'));
+    }
+    public function tawk_form(Request $request)
+    {
+        $input=$request->all();
+        $input['type']='Tawk.to Form';
+        Contact::create($input);
     }
 }

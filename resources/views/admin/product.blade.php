@@ -28,6 +28,11 @@
         </ul>
     </div>
 @endif
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+@endif
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
@@ -42,7 +47,7 @@
                             <th class="th-sm">Sub Category</th>
                             <th class="th-sm">Third Category</th>
                             <th class="th-sm" style="width: 40%">Image</th>
-                            <th class="th-sm">Action</th>
+                            <th class="th-sm" >Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,10 +66,11 @@
                         @endforeach
                       </td>
                      	<td>
-                        
+                        <div style="display: flex;">
                      		<a class="btn btn-primary" name="{{$record->name}}" href="{{url('admin/edit_product/'.$record->id)}}"><i class="fas fa-edit"></i></a>
-                        <a href="{{URL('admin/delete_product/'.$record->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-                     	</td>
+                        <a href="{{URL('admin/delete_product/'.$record->id)}}" class="btn btn-danger" onclick="return confirm('Are you sure?')" ><i class="fas fa-trash" ></i></a>
+                        </div>
+                       </td>
                      </tr>
                      @endforeach
                     </tbody>
@@ -100,7 +106,7 @@
                   <div class="form-group">
                     <label for="exampleInputEmail1">Category</label>
                     <select type="text" class="form-control" name="category_id" id='category_id' required>
-                      <option>Please select the following</option>
+                      <option value="">Please select the following</option>
                       @foreach($categories as $category)
                       <option value="{{$category->id}}">{{$category->name}}</option>
                       @endforeach
@@ -119,7 +125,7 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Third Category Image</label>
+                    <label for="exampleInputEmail1">Product Images</label>
                     <input type="file" class="form-control" name="product_image[]" id='product_image' required onchange="image(this);" multiple>
                   </div>
                 </div>
@@ -249,13 +255,20 @@
             type:'POST',
              dataType: "json",
             success:function(data){
+              if(data.length != 0){
                 $('#sub_category_id').empty();
+                $('#sub_category_id').attr('required',true);
                 $('#third_category_id').empty();
                 $('#sub_category_id').append('<option value="">Please select the following</option>'); 
                         $.each(data, function(key, value){
                           $('#sub_category_id').append('<option value="'+value.id+'">'+value.name+'</option>'); 
                           });
-               
+              }
+              else{
+                $('#sub_category_id').attr('required',false);
+                $('#sub_category_id').empty();
+                $('#third_category_id').empty();
+              }
             }
           });
 });
@@ -269,12 +282,18 @@
             type:'POST',
              dataType: "json",
             success:function(data){
+              if(data.length != 0){
+                $('#third_category_id').attr('required',true);
                 $('#third_category_id').empty();
                 $('#third_category_id').append('<option value="">Please select the following</option>'); 
                         $.each(data, function(key, value){
                           $('#third_category_id').append('<option value="'+value.id+'">'+value.name+'</option>'); 
                           });
-               
+              }
+              else{
+                $('#third_category_id').attr('required',false);
+                $('#third_category_id').empty();
+              }
             }
           });
 });

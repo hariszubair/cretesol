@@ -14,7 +14,8 @@ class Product extends Model
     	'third_category_id',
      	'name',
          'slug',
-     	'image'
+     	'image',
+         'compressed_image'
      ];
      public function category(){
 
@@ -34,6 +35,11 @@ class Product extends Model
     public function images(){
 
         return $this->hasMany('App\Models\ProductsImage');
+
+    }
+    public function first_image(){
+
+        return $this->hasOne('App\Models\ProductsImage');
 
     }
 }

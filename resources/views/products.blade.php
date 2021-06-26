@@ -5,6 +5,9 @@
 .projects-grid.pf_5_cols .project-item.thumb2x, .projects-grid.pf_5_cols .grid-sizer.thumb2x{
     width:50%
 }
+projects-grid .projects-box .portfolio-info {
+    opacity: 1 !important;
+}
 </style>
 <div id="page" class="site">
         <header id="site-header" class="site-header header-transparent">
@@ -16,7 +19,7 @@
                             <div class="octf-mainbar-row octf-row">
                                 <div class="octf-col logo-col no-padding">
                                     <div id="site-logo" class="site-logo">
-                                        <a href="index.html">
+                                        <a href="{{URL('')}}">
                                             <img id="main_logo" src="{{asset('public/images/dark-logo.png')}}" alt="Cretesol" class="" >
                                         </a>
                                     </div>
@@ -40,11 +43,11 @@
                                                     @endforeach
                                                 </ul>
                                             </li>
-                                            <li class=""><a href="#">Projects</a>
+                                            <li class=""><a href="{{URL('projects')}}">Projects</a>
                                             </li>
                                             
-                                            <li><a href="contact.html">Contact Us</a></li>
-                                            <li><a href="contact.html">Clients</a></li>
+                                            <li><a href="{{URL('contact_us')}}">Contact Us</a></li>
+                                            <li><a href="{{URL('clients')}}">Clients</a></li>
 
                                         </ul>
                                     </nav>
@@ -60,7 +63,7 @@
                         <div class="octf-col">
                             <div class="mlogo_wrapper clearfix">
                                 <div class="mobile_logo">
-                                    <a href="index.html">
+                                    <a href="{{URL('')}}">
                                         <img src="{{asset('public/images/dark-logo.png')}}" alt="Cretesol" >
                                     </a>
                                 </div>
@@ -92,7 +95,7 @@
                                         <div class="mobile-nav">
                                             <ul id="menu-main-menu" class="mobile_mainmenu none-style" style="font-family:'navBarFont'">
                                                 <li class=" current-menu-item current-menu-ancestor">
-                                                <a href="index.html">Home</a>
+                                                <a href="{{URL('')}}">Home</a>
                                             </li>
                                             <li class="menu-item-has-children"><a href="#">Products</a>
                                                 <ul class="sub-menu">
@@ -156,7 +159,7 @@
                                     <div class="projects-box">
                                         <div class="projects-thumbnail">
                                             <a  href="{{URL('product/'.$product->slug)}}">
-                                                <img src="{{URL($product->image)}}" alt="{{$product->image}}" style="height:300px;object-fit:cover"> 
+                                                <img src="{{URL($product->compressed_image)}}" alt="Cretesol-{{$product->name}}" style="height:300px;object-fit:cover"> 
                                             </a>
                                             <div class="overlay">
                                                 <h5>{{$product->name}}</h5>
@@ -177,7 +180,7 @@
                                     <div class="projects-box">
                                         <div class="projects-thumbnail">
                                             <a  href="{{URL('product/'.$product->slug)}}">
-                                                <img src="{{URL($product->image)}}" alt="{{$product->image}}" style="height:300px;object-fit:cover"> 
+                                                <img src="{{URL($product->compressed_image)}}" alt="Cretesol-{{$product->name}}" style="height:300px;object-fit:cover"> 
                                             </a>
                                             <div class="overlay">
                                                 <h5>{{$product->name}}</h5>

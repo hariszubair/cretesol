@@ -29,6 +29,11 @@
         </ul>
     </div>
 @endif
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+@endif
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
@@ -52,7 +57,7 @@
                      	<td>{{$record->slug}}</td>
                      	<td><img style="width:100px;height:100px;overflow: hidden; object-fit: cover;" src="{{URL($record->image)}}"></td>
                      	<td>
-                     		<button class="btn btn-primary edit_category" name="{{$record->name}}" slug="{{$record->slug}}" category_id="{{$record->id}}"><i class="fas fa-edit"></i></button><a href="{{URL('admin/delete_category/'.$record->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                     		<button class="btn btn-primary edit_category" name="{{$record->name}}" slug="{{$record->slug}}" category_id="{{$record->id}}"><i class="fas fa-edit"></i></button><a href="{{URL('admin/delete_category/'.$record->id)}}" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></a>
                      	</td>
                      </tr>
                      @endforeach

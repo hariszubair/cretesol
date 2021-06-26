@@ -84,7 +84,6 @@
         </div>
     </div>
 </div><!-- #page -->
-<a id="back-to-top" href="#" class="show"><i class="ot-flaticon-left-arrow"></i></a>
         <!-- jQuery -->
 <script src="{{asset('public/js/jquery.min.js')}}"></script>
 <script src="{{asset('public/js/royal_preloader.min.js')}}"></script>
@@ -115,19 +114,52 @@
 
         }
     });
+<<<<<<< HEAD
+=======
+    $('.number_only').on('input',function(event) {
+ var patt=/^[\d]+$/gm;
+              if(!patt.test($(this).val())) {
+               $(this).val($(this).val().replace(/[^\d]/g, ''));
+             
+    }
+    });
+    $(".cat").click(function() {
+  window.location = $(this).find("a").attr("href"); 
+  return false;
+});
+>>>>>>> 36ac3bc3ddd6327df8d6e6e623ceb9bb89cfc527
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
+<<<<<<< HEAD
 s1.src='https://embed.tawk.to/6074302b067c2605c0c194c4/1f32tob10';
+=======
+s1.src='https://embed.tawk.to/60747e63f7ce182709399d20/1f33grdip';
+>>>>>>> 36ac3bc3ddd6327df8d6e6e623ceb9bb89cfc527
 s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
+<<<<<<< HEAD
            $(".cat").click(function() {
   window.location = $(this).find("a").attr("href"); 
   return false;
 });
+=======
+Tawk_API.onOfflineSubmit = function(data){
+    //place your code here
+    $.ajax({
+          headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          },
+            url:'./tawk_form',
+            data:{name:data.questions[1].answer, number:data.questions[2].answer,email:data.questions[3].answer,message:data.questions[4].answer},
+            type:'POST',
+          });
+};
+$('#greetingsMainContainer').css("background-color", "#2a2828");
+>>>>>>> 36ac3bc3ddd6327df8d6e6e623ceb9bb89cfc527
     </script>  
 <script src="{{asset('public/js/mousewheel.min.js')}}"></script>
 <script src="{{asset('public/js/lightgallery-all.min.js')}}"></script>
