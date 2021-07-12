@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 
@@ -13,7 +14,8 @@ class AdminController extends Controller
     }
     public function index()
     {
-        return view('home');
+        $contacts = Contact::orderBy('created_at', 'desc')->get();
+        return view('dashboard', compact('contacts'));
+        // return view('home');
     }
-    
 }

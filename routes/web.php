@@ -31,7 +31,7 @@ Route::get('/product/{id}', [App\Http\Controllers\HomeController::class, 'produc
 Route::get('/contact_us', [App\Http\Controllers\HomeController::class, 'contact_us'])->name('contact_us');
 Route::post('/contact_form', [App\Http\Controllers\HomeController::class, 'contact_form'])->name('contact_form');
 Route::post('/tawk_form', [App\Http\Controllers\HomeController::class, 'tawk_form'])->name('tawk_form');
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
+// Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 Route::get('/delete_contact/{id}', [App\Http\Controllers\HomeController::class, 'delete_contact'])->name('delete_contact');
 Route::get('projects', [App\Http\Controllers\HomeController::class, 'projects'])->name('projects');
 Route::get('clients', [App\Http\Controllers\HomeController::class, 'clients'])->name('clients');
@@ -45,7 +45,7 @@ Route::get('clients', [App\Http\Controllers\HomeController::class, 'clients'])->
 
 //Portal 
 
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('home');
 
 
 //category
@@ -110,7 +110,7 @@ Route::post('/admin/edit_user', [App\Http\Controllers\UserController::class, 'ed
 Route::get('/admin/delete_user/{id}', [App\Http\Controllers\UserController::class, 'delete_user'])->name('admin.delete_client');
 
 
-Route::get('/clear-cache', function() {
+Route::get('/clear-cache', function () {
     $exitCode = Artisan::call('config:cache');
     $exitCode = Artisan::call('cache:clear');
 });
