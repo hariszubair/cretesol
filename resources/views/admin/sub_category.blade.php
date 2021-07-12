@@ -36,7 +36,7 @@
     <div class="container-fluid">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-        <div class="card-body">
+        <div class="card-body" style="width: 100%;overflow-y:scroll">
           <table id="sub_category" class="table table-bordered" width="100%" style="font-size: 12px">
             <thead>
               <tr>
@@ -171,7 +171,7 @@
 @section('footer')
 <script src="{{asset('public/js/jquery.dataTables.min.js')}}"></script>
 
-$(document).ready(function() {
+
 
 <script type="text/javascript">
   $(document).ready(function() {
