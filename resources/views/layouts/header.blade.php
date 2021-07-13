@@ -3,7 +3,9 @@
 
 <head>
 <meta name="csrf-token" content="{{ csrf_token() }}">
-
+     <meta name="description" content="Cretesol is a Stone & Tile Company based in Pakistan, Specialist in Imported Marble, Granite, Quartzite, Travertine & Ceramic, Porcelain Tiles. With the presence in the city of Islamabad(Flagship), Lahore and Karachi.">
+  <meta name="keywords" content="Cretesol, title, stone,cretesol.com,marble">
+  <meta name="author" content="Cretesol">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
