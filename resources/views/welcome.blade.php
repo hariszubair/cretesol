@@ -536,11 +536,7 @@
             
         </div>
          <script>
-<<<<<<< HEAD
-  
-=======
-             
->>>>>>> 36ac3bc3ddd6327df8d6e6e623ceb9bb89cfc527
+
          </script>
         @endsection
         
