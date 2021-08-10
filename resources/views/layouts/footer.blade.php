@@ -139,6 +139,8 @@
     })();
     Tawk_API.onOfflineSubmit = function(data) {
         //place your code here
+        console.log(data);
+        
         $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -152,6 +154,8 @@
             },
             type: 'POST',
         });
+
+
     };
     $('#greetingsMainContainer').css("background-color", "#2a2828");
 </script>
