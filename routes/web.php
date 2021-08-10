@@ -35,6 +35,7 @@ Route::post('/tawk_form', [App\Http\Controllers\HomeController::class, 'tawk_for
 Route::get('/delete_contact/{id}', [App\Http\Controllers\HomeController::class, 'delete_contact'])->name('delete_contact');
 Route::get('projects', [App\Http\Controllers\HomeController::class, 'projects'])->name('projects');
 Route::get('clients', [App\Http\Controllers\HomeController::class, 'clients'])->name('clients');
+Route::get('/about_us', [App\Http\Controllers\HomeController::class, 'about_us'])->name('about_us');
 
 
 

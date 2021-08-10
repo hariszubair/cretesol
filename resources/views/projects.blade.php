@@ -41,6 +41,7 @@
                                         <li id='home_link'>
                                             <a href="{{URL('/')}}">Home</a>
                                         </li>
+                                        <li class=""><a href="{{URL('about_us')}}">About Us</a>
                                         <li id='product_link' class="menu-item-has-children"><a href="#">Products</a>
                                             <ul class="sub-menu">
                                                 @foreach(\App\Models\Category::all() as $category)
@@ -102,11 +103,14 @@
                                             <li class=" current-menu-item current-menu-ancestor">
                                                 <a href="{{URL('')}}">Home</a>
                                             </li>
+                                            <li class=""><a href="{{URL('about_us')}}">About Us</a>
+                                            </li>
                                             <li class="menu-item-has-children"><a href="#">Products</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="tiles.html">Tiles</a></li>
-                                                    <li><a href="">Stones</a></li>
-                                                    <li><a href="">Waterjet & Mosaic</a></li>
+                                                    @foreach(\App\Models\Category::all() as $category)
+                                                    <li><a href="{{URL('category/'.$category->slug)}}">{{$category->name}}</a></li>
+                                                    @endforeach
+
                                                 </ul>
                                             </li>
                                             <li class=""><a href="{{URL('projects')}}">Projects</a>
