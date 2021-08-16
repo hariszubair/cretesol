@@ -61,6 +61,7 @@
                 </div>
             </div>
         </div>
+
         <div class="header_mobile">
             <div class="container-fluid">
                 <div class="octf-mainbar-row octf-row">
@@ -105,8 +106,8 @@
                                             </li>
                                             <li class="menu-item-has-children"><a href="#">Products</a>
                                                 <ul class="sub-menu">
-                                                    @foreach(\App\Models\Category::all() as $category)
-                                                    <li><a href="{{URL('category/'.$category->slug)}}">{{$category->name}}</a></li>
+                                                    @foreach(\App\Models\Category::all() as $categories)
+                                                    <li><a href="{{URL('category/'.$category->slug)}}">{{$categories->name}}</a></li>
                                                     @endforeach
 
                                                 </ul>
@@ -127,7 +128,6 @@
             </div>
         </div>
     </header>
-
 
     <div id="content" class="site-content">
         <div class="page-header dtable text-center header-transparent pheader-portfolio" style="background-image: url({{URL($category->image)}});">
