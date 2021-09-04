@@ -61,6 +61,7 @@
                 </div>
             </div>
         </div>
+
         <div class="header_mobile">
             <div class="container-fluid">
                 <div class="octf-mainbar-row octf-row">
@@ -127,7 +128,6 @@
             </div>
         </div>
     </header>
-
 
     <div id="content" class="site-content">
         <div class="page-header dtable text-center header-transparent pheader-portfolio" style="background-image: url({{URL($category->image)}});">

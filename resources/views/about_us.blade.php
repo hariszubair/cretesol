@@ -86,13 +86,17 @@
                                             <li>
                                                 <a href="{{URL('')}}">Home</a>
                                             </li>
-                                            <li class="menu-item-has-children"><a href="#">Products</a>
+                                             <li class=""><a href="{{URL('about_us')}}">About Us</a>
+                                            </li>
+                                             <li class="menu-item-has-children"><a href="#">Products</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="tiles.html">Tiles</a></li>
-                                                    <li><a href="">Stones</a></li>
-                                                    <li><a href="">Waterjet & Mosaic</a></li>
+                                                    @foreach(\App\Models\Category::all() as $category)
+                                                    <li><a href="{{URL('category/'.$category->slug)}}">{{$category->name}}</a></li>
+                                                    @endforeach
+
                                                 </ul>
                                             </li>
+
                                             <li class=""><a href="{{URL('projects')}}">Projects</a>
                                             </li>
 
@@ -127,13 +131,9 @@
     <section class="about-company">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-12 align-self-center text-center mb-5 mb-lg-0">
-                    <div class="about-img">
-                        <img src="https://via.placeholder.com/623x570.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 align-self-center">
-                    <div class="about-detail">
+              
+                <div class=" align-self-center">
+                    <div class="">
                         <div class="ot-heading " style="margin-bottom: 0;">
                             <span>
                                 Hello & Welcome

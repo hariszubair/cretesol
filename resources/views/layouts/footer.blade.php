@@ -4,12 +4,14 @@
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-4 mb-xl-0" style="padding-top:15px">
                 <div class="widget-footer navBarFont">
                     <!-- <img src="{{asset('images/white-logo.png')}}" class="footer-logo" alt=""> -->
-                    <p>We provides a full range of interior design, architectural design.</p>
+                    <p>We provide a full range of interior design.</p>
                     <div class="footer-social list-social">
                         <ul>
                             <li><a href="https://www.facebook.com/cretesol" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="https://pk.linkedin.com/company/cretesolstone" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
                             <li><a href="https://www.instagram.com/cretesolofficial_" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                             <li><a href="https://twitter.com/cretesol" target="_self"><i class="fab fa-twitter"></i></a></li>
+                              <li><a href="https://www.youtube.com/channel/UCLj6vtaa0U2CDy2b09RbD3Q" target="_self"><i class="fab fa-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div>

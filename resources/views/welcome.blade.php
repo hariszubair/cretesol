@@ -263,6 +263,9 @@
                     <li><a href="https://www.instagram.com/cretesolofficial_" target="_blank"><span>instagram</span></a></li>
                     <li><a href="https://www.facebook.com/cretesol" target="_blank"><span>facebook</span></a></li>
                     <li><a href="https://pk.linkedin.com/company/cretesolstone" target="_blank"><span>linkedin</span></a></li>
+                    <li><a href="https://twitter.com/cretesol" target="_blank"><span>twitter</span></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCLj6vtaa0U2CDy2b09RbD3Q" target="_blank"><span>youtube</span></a></li>
+
                 </ul>
             </div>
         </div>
@@ -295,7 +298,7 @@
                     <div class="col-md-12 text-center Cretesol-align-center">
                         <div class="ot-heading " style="padding-bottom:30px">
                             <span>[ OUR SERVICES ]</span>
-                            <h2 class="main-heading bFont">What Can We Offer</h2>
+                            <h2 class="main-heading bFont">Products We Proudly Offer</h2>
                         </div>
                     </div>
                 </div>
@@ -366,7 +369,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mb-4 mb-lg-0">
-                        <h2 class="text-light mb-0 bFont">Get Incredible Tiles Stones & Mosaic</h2>
+                        <h2 class="text-light mb-0 bFont">Get Prime Quality Stones, Tiles & Mosaics</h2>
                         <div class="space-5"></div>
 
                     </div>
