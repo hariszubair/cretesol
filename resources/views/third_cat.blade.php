@@ -100,8 +100,8 @@
                                             </li>
                                             <li class="menu-item-has-children"><a href="#">Products</a>
                                                 <ul class="sub-menu">
-                                                    @foreach(\App\Models\Category::all() as $category)
-                                                    <li><a href="{{URL('category/'.$category->slug)}}">{{$category->name}}</a></li>
+                                                    @foreach(\App\Models\Category::all() as $cat)
+                                                    <li><a href="{{URL('category/'.$cat->slug)}}">{{$cat->name}}</a></li>
                                                     @endforeach
 
                                                 </ul>
