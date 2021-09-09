@@ -44,7 +44,7 @@ class ProductController extends Controller
                 }
                 $file->move(public_path('images/assets/'), $name);
                 $temp_product['image'] = '/images/assets/' . $name;
-                $image = Image::make(public_path($temp_product['image']))->resize(540, 300);
+                $image = Image::make(public_path($temp_product['image']))->fit(540, 300);
                 $image->save(public_path('images/assets/compressed_' . $name));
                 $temp_product['compressed_image'] = '/images/assets/compressed_' . $name;
                 ProductsImage::create($temp_product);
