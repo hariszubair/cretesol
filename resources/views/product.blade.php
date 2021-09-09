@@ -147,7 +147,7 @@
                         <div class="gallery-post img-slider owl-carousel owl-theme">
                             @foreach($product->images as $image)
                             <div class="item-image">
-                                <img src="{{URL($image->image)}}" alt="Cretesol-{{$product->name}}" style="height:500px;width:100%;object-fit:cover">
+                                <img src="{{URL($image->image)}}" alt="Cretesol-{{$product->name}}" style="height:600px;width:100%;object-fit:cover">
                             </div>
                             @endforeach
                         </div>

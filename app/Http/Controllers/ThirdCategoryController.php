@@ -22,7 +22,6 @@ class ThirdCategoryController extends Controller
     }
     public function add_third_category(Request $request)
     {
-        // return $request;
         $sub_category = SubCategory::has('products')->find($request->parent_category_id);
         if ($sub_category) {
             return redirect()->back()->withErrors('Parent category (' . $sub_category->name . ') has products, please delete the products to add a third category');
@@ -64,7 +63,7 @@ class ThirdCategoryController extends Controller
             $name = time() . '.' . $name_array[0];
             $file->move(public_path('images/assets/'), $name);
             $input['image'] = '/images/assets/' . $name;
-            $image = Image::make(public_path($input['image']))->resize(540, 300);
+            $image = Image::make(public_path($input['image']))->fit(540, 300);
             $image->save(public_path('images/assets/compressed_' . $name));
             $input['compressed_image'] = '/images/assets/compressed_' . $name;
         }

@@ -148,9 +148,7 @@
                                 <div class="project-item thumb2x">
                                     <div class="projects-box">
                                         <div class="projects-thumbnail">
-                                            <a href="{{URL('sub_category/'.$sub_category->slug)}}">
-                                                <img src="{{URL($sub_category->compressed_image)}}" alt="Cretesol-{{$sub_category->name}}" style="height:300px;object-fit:cover">
-                                            </a>
+                                            <img src="{{URL($sub_category->compressed_image)}}" alt="Cretesol-{{$sub_category->name}}" style="height:300px;object-fit:cover">
                                             <div class="overlay">
                                                 <h5>{{$sub_category->name}}</h5>
                                                 <i class="ot-flaticon-add"></i>

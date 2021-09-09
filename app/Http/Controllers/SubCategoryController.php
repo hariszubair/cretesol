@@ -22,7 +22,7 @@ class SubCategoryController extends Controller
     }
     public function add_sub_category(Request $request)
     {
-        $main_category = Category::has('products')->find($request->category_id);
+        $main_category = Category::has('products')->with('products')->find($request->category_id);
         if ($main_category) {
             return redirect()->back()->withErrors('Main category (' . $main_category->name . ') has products, please delete the products to add a sub category');
         }
@@ -36,7 +36,7 @@ class SubCategoryController extends Controller
             $name = time() . '.' . $name_array[0];
             $file->move(public_path('images/assets'), $name);
             $input['image'] = '/images/assets/' . $name;
-            $image = Image::make(public_path($input['image']))->resize(540, 300);
+            $image = Image::make(public_path($input['image']))->fit(540, 300);
             $image->save(public_path('images/assets/compressed_' . $name));
             $input['compressed_image'] = '/images/assets/compressed_' . $name;
         }
@@ -66,7 +66,7 @@ class SubCategoryController extends Controller
             $name = time() . '.' . $name_array[0];
             $file->move(public_path('images/assets'), $name);
             $input['image'] = '/images/assets/' . $name;
-            $image = Image::make(public_path($input['image']))->resize(540, 300);
+            $image = Image::make(public_path($input['image']))->fit(540, 300);
             $image->save(public_path('images/assets/compressed_' . $name));
             $input['compressed_image'] = '/images/assets/compressed_' . $name;
         }

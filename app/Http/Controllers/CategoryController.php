@@ -41,7 +41,7 @@ class CategoryController extends Controller
             $name = time() . '.' . $name_array[0];
             $file->move(public_path('images/assets'), $name);
             $input['image'] = '/images/assets/' . $name;
-            $image = Image::make(public_path($input['image']))->resize(540, 300);
+            $image = Image::make(public_path($input['image']))->fit(540, 300);
             $image->save(public_path('images/assets/compressed_' . $name));
             $input['compressed_image'] = '/images/assets/compressed_' . $name;
         }
@@ -68,7 +68,7 @@ class CategoryController extends Controller
             $name = time() . '.' . $name_array[0];
             $file->move(public_path('images/assets'), $name);
             $input['image'] = '/images/assets/' . $name;
-            $image = Image::make(public_path($input['image']))->resize(540, 300);
+            $image = Image::make(public_path($input['image']))->fit(540, 300);
             $image->save(public_path('images/assets/compressed_' . $name));
             $input['compressed_image'] = '/images/assets/compressed_' . $name;
         }
