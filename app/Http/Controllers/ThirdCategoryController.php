@@ -62,7 +62,7 @@ class ThirdCategoryController extends Controller
             }
             $name_array = array_map('strrev', explode('.', strrev($file->getClientOriginalName())));
             $name = time() . '.' . $name_array[0];
-            $file->move(public_path('imagesassets//'), $name);
+            $file->move(public_path('images/assets/'), $name);
             $input['image'] = '/images/assets/' . $name;
             $image = Image::make(public_path($input['image']))->resize(540, 300);
             $image->save(public_path('images/assets/compressed_' . $name));
