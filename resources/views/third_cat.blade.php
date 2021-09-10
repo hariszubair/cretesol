@@ -167,7 +167,7 @@
                                     </div>
                                 </div>
                                 @else
-                                <div class="project-item thumb2x" style="margin-left: 25%">
+                                <div class="project-item thumb2x">
                                     <div class="projects-box">
                                         <div class="projects-thumbnail">
                                             <a href="{{URL('third_category/'.$third_category->slug)}}">
