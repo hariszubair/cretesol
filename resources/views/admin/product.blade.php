@@ -62,7 +62,7 @@
 
                 <td>
                   @foreach($record->images as $image)
-                  <a href="{{URL($image->image)}}" target="_blank"><img style="width:24%;height:100px;overflow: hidden; object-fit: cover;" src="{{URL($image->image)}}"></a>
+                  <a href="{{URL($image->compressed_image)}}" target="_blank"><img style="width:24%;height:100px;overflow: hidden; object-fit: cover;" src="{{URL($image->image)}}"></a>
                   @endforeach
                 </td>
                 <td>
