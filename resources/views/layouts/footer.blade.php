@@ -199,6 +199,65 @@
 
 
 @yield('footer')
+
+<style>
+    @font-face {
+        font-family: 'navBarFont';
+        src: url("{{asset('fonts/gotham-medium.otf')}}");
+        font-style: normal;
+        font-weight: 10;
+    }
+
+    @font-face {
+        font-family: 'gotham-light';
+        src: url("{{asset('fonts/gotham-light.otf')}}");
+        font-style: normal;
+        font-weight: 10;
+    }
+
+    @font-face {
+        font-family: 'gotham-medium';
+        src: url("{{asset('fonts/gotham-medium.otf')}}");
+        font-style: normal;
+        font-weight: 10;
+    }
+
+    @font-face {
+        font-family: 'sliderFont';
+        src: url("{{asset('fonts/raleway_light.ttf')}}");
+        font-style: normal;
+        font-weight: 100;
+    }
+
+    .navBarFont {
+        font-family: 'navBarFont'
+    }
+
+    .sliderFont {
+        font-family: 'sliderFont'
+    }
+
+    .aFont {
+        font-family: 'navBarFont'
+    }
+
+    .gMFont {
+        font-family: 'gotham-medium'
+    }
+
+    .gLFont {
+        font-family: 'gotham-light'
+    }
+
+    .bFont {
+        font-family: 'gotham-light'
+    }
+</style>
+<!-- REVOLUTION SLIDER CSS -->
+<link href="{{asset('plugins/revolution/revolution/css/settings.css')}}" rel="stylesheet">
+<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{asset('css/style.css')}}" rel="stylesheet">
+
 </body>
 
 </html>
