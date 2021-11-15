@@ -20,7 +20,6 @@ class ProjectController extends Controller
     }
     public function add_project(Request $request)
     {
-        return $request;
         $validated = $request->validate([
             'name' => 'required|unique:projects,name',
             'slug' => 'required|unique:products,slug,',
