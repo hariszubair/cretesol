@@ -43,8 +43,9 @@ class HomeController extends Controller
     {
         $count = Count::first();
         $categories = Category::all();
-        $images = MiscImage::all();
-        return view('welcome', compact('categories', 'images', 'count'));
+        $images = MiscImage::where('name', '!=', 'video')->get();
+        $video = MiscImage::where('name', '=', 'video')->first();
+        return view('welcome', compact('categories', 'images', 'count', 'video'));
     }
     public function stones()
     {
@@ -128,6 +129,11 @@ class HomeController extends Controller
     {
         $projects = Project::orderBy('created_at', 'desc')->get();
         return view('projects', compact('projects'));
+    }
+    public function project($id)
+    {
+        $project = Project::with('images', 'first_image')->find($id);
+        return view('project', compact('project'));
     }
     public function clients()
     {

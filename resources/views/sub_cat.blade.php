@@ -10,6 +10,14 @@
     projects-grid .projects-box .portfolio-info {
         opacity: 1 !important;
     }
+
+    .project-item.thumb2x.single {
+        position: absolute;
+        top: 50% !important;
+        left: 50% !important;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
 </style>
 <div id="page" class="site">
     <header id="site-header" class="site-header header-transparent">
@@ -22,7 +30,7 @@
                             <div class="octf-col logo-col no-padding">
                                 <div id="site-logo" class="site-logo">
                                     <a href="{{URL('')}}">
-                                        <img id="main_logo" src="{{asset('public/images/dark-logo.png')}}" alt="Cretesol" class="">
+                                        <img id="main_logo" class="logo-img" src="{{asset('public/images/white-logo.png')}}" alt="Cretesol" class="">
                                     </a>
                                 </div>
                             </div>
@@ -32,10 +40,10 @@
                                         <li id='home_link'>
                                             <a href="{{URL('/')}}">Home</a>
                                         </li>
-                                        <li class=""><a href="{{URL('about_us')}}">About Us</a>
+                                        <li class=""><a href="{{URL('about_us')}}">Company</a>
                                         </li>
 
-                                        <li id='product_link' class="menu-item-has-children current-menu-ancestor"><a href="#">Products</a>
+                                        <li id='product_link' class="menu-item-has-children current-menu-ancestor"><a href="#">Collections</a>
                                             <ul class="sub-menu">
                                                 @foreach(\App\Models\Category::all() as $cat)
                                                 <li class="{{$category->slug == $cat->slug ? 'current-menu-item' : ''}}" id='tile_sub_link'><a href="{{URL('category/'.$cat->slug)}}">{{$cat->name}}</a></li>
@@ -45,9 +53,10 @@
                                         <li class=""><a href="{{URL('projects')}}">Projects</a>
                                         </li>
 
-                                        <li><a href="{{URL('contact_us')}}">Contact Us</a></li>
+                                        <li><a href="{{URL('contact_us')}}">Connect</a></li>
                                         <li><a href="{{URL('clients')}}">Clients</a></li>
 
+                                        @include('top_media_link')
                                     </ul>
                                 </nav>
                             </div>
@@ -63,7 +72,7 @@
                         <div class="mlogo_wrapper clearfix">
                             <div class="mobile_logo">
                                 <a href="{{URL('')}}">
-                                    <img src="{{asset('public/images/dark-logo.png')}}" alt="Cretesol">
+                                    <img src="{{asset('public/images/white-logo.png')}}" alt="Cretesol">
                                 </a>
                             </div>
                         </div>
@@ -96,9 +105,9 @@
                                             <li class=" current-menu-item current-menu-ancestor">
                                                 <a href="{{URL('')}}">Home</a>
                                             </li>
-                                            <li class=""><a href="{{URL('about_us')}}">About Us</a>
+                                            <li class=""><a href="{{URL('about_us')}}">Company</a>
                                             </li>
-                                            <li class="menu-item-has-children"><a href="#">Products</a>
+                                            <li class="menu-item-has-children"><a href="#">Collections</a>
                                                 <ul class="sub-menu">
                                                     @foreach(\App\Models\Category::all() as $cat)
                                                     <li><a href="{{URL('category/'.$cat->slug)}}">{{$cat->name}}</a></li>
@@ -109,7 +118,7 @@
                                             <li class=""><a href="{{URL('projects')}}">Projects</a>
                                             </li>
 
-                                            <li><a href="{{URL('contact_us')}}">Contact Us</a></li>
+                                            <li><a href="{{URL('contact_us')}}">Connect</a></li>
                                             <li><a href="{{URL('clients')}}">Clients</a></li>
                                         </ul>
                                     </div>
@@ -126,26 +135,30 @@
     <div id="content" class="site-content">
         <div class="page-header dtable text-center header-transparent pheader-portfolio" style="background-image: url({{URL($category->image)}});">
             <div class="dcell">
-                <div class="container" style="font-family:'sliderFont'">
-                    <h1 class="page-title" style="font-family:'sliderFont'">{{$category->name}}</h1>
-                    <ul id="breadcrumbs" class="breadcrumbs none-style">
-                        <li><a href="{{URL('/')}}">Home</a></li>
-                        <li class="active">{{$category->name}}</li>
-                    </ul>
+                <div style="font-family:'sliderFont';background-color:black;opacity:0.75">
+
+                    <div class="container" style="font-family:'sliderFont'">
+                        <h1 class="page-title" style="font-family:'sliderFont'">{{$category->name}}</h1>
+                        <ul id="breadcrumbs" class="breadcrumbs none-style">
+                            <li><a href="{{URL('/')}}">Home</a></li>
+                            <li class="active">{{$category->name}}</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <section class="our-portfolio" style="padding-top: 50px">
-        <div class="container-fluid p-0">
+    <section class="our-portfolio" style="padding: 50px 20px 50px 20px">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-11 text-center theratio-align-center" style="margin-left:auto;margin-right:auto">
-                    <div class="project-filter-wrapper">
-                        <div class="projects-grid pf_4_cols style-2 p-info-s2 img-scale w-auto projects-metro">
-                            <div class="grid-sizer"></div>
+                <div class="col-lg-12 text-center theratio-align-center" style="margin-left:auto;margin-right:auto">
+                    <div class="projects-grid pf_4_cols style-2 p-info-s2 img-scale w-auto projects-metro">
+
+                        <div class="row justify-content-center ">
                             @foreach($category->sub_category as $key=> $sub_category)
-                            @if(count($category->sub_category) % 2 == 0 || $key < count($category->sub_category) -1)
-                                <div class="project-item thumb2x">
+                            <div class=" col-lg-6 col-md-6 col-sm-12" style="padding:10px">
+
+                                <div class="">
                                     <div class="projects-box">
                                         <div class="projects-thumbnail">
                                             <a href="{{URL('sub_category/'.$sub_category->slug)}}">
@@ -165,34 +178,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                @else
-                                <div class="project-item thumb2x">
-                                    <div class="projects-box">
-                                        <div class="projects-thumbnail">
-                                            <a href="{{URL('sub_category/'.$sub_category->slug)}}">
-                                                <img src="{{URL($sub_category->image)}}" alt="{{$sub_category->image}}" style="height:300px;object-fit:cover">
-                                            </a>
-                                            <div class="overlay">
-                                                <h5>{{$sub_category->name}}</h5>
-                                                <i class="ot-flaticon-add"></i>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio-info">
-                                            <div class="portfolio-info-inner">
-                                                <h5 class="bFont"><a class="title-link" href="{{URL('sub_category/'.$sub_category->slug)}}">{{$sub_category->name}}</a></h5>
-                                                <p class="portfolio-cates"><span class="aFont">{{$category->name}}</span></p>
-                                            </div>
-                                            <a class="overlay" href="portfolio-standar.html"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endif
-                                @endforeach
+                                <!-- style="position: absolute;top: 50%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%); " -->
+
+                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
+    </section>
     @endsection

@@ -13,7 +13,7 @@
                             <div class="octf-col logo-col no-padding">
                                 <div id="site-logo" class="site-logo">
                                     <a href="{{URL('')}}">
-                                        <img id="main_logo" src="images/dark-logo.png" alt="Cretesol" class="">
+                                        <img id="main_logo" src="images/white-logo.png" alt="Cretesol" class="">
                                     </a>
                                 </div>
                             </div>
@@ -37,6 +37,7 @@
 
                                         <li class=" current-menu-item current-menu-ancestor"><a href="{{URL('contact_us')}}">Contact Us</a></li>
                                         <li><a href="{{URL('clients')}}">Clients</a></li>
+                                        @include('top_media_link')
 
                                     </ul>
                                 </nav>
@@ -115,12 +116,15 @@
     <div id="content" class="site-content">
         <div class="page-header dtable text-center header-transparent page-header-contact" style="background-image: url({{asset('images/header_contact.jpg')}});">
             <div class="dcell">
-                <div class="container bFont">
-                    <h1 class="page-title bFont">Contact</h1>
-                    <ul id="breadcrumbs" class="breadcrumbs none-style">
-                        <li><a href="{{URL('')}}">Home</a></li>
-                        <li class="active">Contacts</li>
-                    </ul>
+                <div style="font-family:'sliderFont';background-color:black;opacity:0.75">
+
+                    <div class="container bFont">
+                        <h1 class="page-title bFont">Contact</h1>
+                        <ul id="breadcrumbs" class="breadcrumbs none-style">
+                            <li><a href="{{URL('')}}">Home</a></li>
+                            <li class="active">Contacts</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -174,14 +178,14 @@
                             <i class="ot-flaticon-phone-call"></i>
                             <div class="info-text">
                                 <h6>OUR PHONE:</h6>
-                                <p><a href="tel:03358855855">03358855855</a></p>
+                                <p><a href="tel:03358855855">Islamabad: 0335 8855855</a></p>
                             </div>
                         </div>
                         <div class="contact-info aFont">
                             <i class="ot-flaticon-phone-call"></i>
                             <div class="info-text">
                                 <h6>OUR PHONE:</h6>
-                                <p><a href="tel:03358855855">03405550913</a></p>
+                                <p><a href="tel:03455564838">Karachi: 0345 5564838</a></p>
                             </div>
                         </div>
                         <div class="list-social">

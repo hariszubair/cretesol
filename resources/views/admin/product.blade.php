@@ -46,7 +46,6 @@
                 <th class="th-sm">Main Category</th>
                 <th class="th-sm">Sub Category</th>
                 <th class="th-sm">Third Category</th>
-                <th class="th-sm" style="width: 40%">Image</th>
                 <th class="th-sm">Action</th>
               </tr>
             </thead>
@@ -60,11 +59,7 @@
                 <td>{{$record->sub_category ? $record->sub_category->name : ''}}</td>
                 <td>{{$record->third_category ? $record->third_category->name : ''}}</td>
 
-                <td>
-                  @foreach($record->images as $image)
-                  <a href="{{URL($image->compressed_image)}}" target="_blank"><img style="width:24%;height:100px;overflow: hidden; object-fit: cover;" src="{{URL($image->compressed_image)}}"></a>
-                  @endforeach
-                </td>
+
                 <td>
                   <div style="display: flex;">
                     <a class="btn btn-primary" name="{{$record->name}}" href="{{url('admin/edit_product/'.$record->id)}}"><i class="fas fa-edit"></i></a>
@@ -126,7 +121,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Product Images</label>
-              <input type="file" class="form-control" name="product_image[]" id='product_image' required onchange="image(this);" multiple>
+              <input type="file" class="form-control" name="product_image[]" id='product_image' required onchange="add_image(this);" multiple>
             </div>
           </div>
 
@@ -152,7 +147,7 @@
 
   });
 
-  function image(input) {
+  function add_image(input) {
 
     var fi = document.getElementById('product_image');
     console.log(fi)
@@ -163,15 +158,15 @@
         var fsize = fi.files.item(i).size;
         var file = Math.round((fsize / 1024));
         // The size of the file. 
-        if (file >= 7048) {
-          swal("File too Big, please select a file less than 7mb", "", "error", {
+        if (file >= 2048) {
+          swal("File too Big, please select a file less than 2mb", "", "error", {
             buttons: false,
             timer: 1500,
           });
           $('#product_image').val(null);
 
-        } else if (name.substr(name.length - 4).toUpperCase() != '.JPG') {
-          swal("File is not in jpg format", "", "error", {
+        } else if (name.substr(name.length - 4).toUpperCase() != '.JPG' && name.substr(name.length - 5).toUpperCase() != '.JPEG' && name.substr(name.length - 5).toUpperCase() != '.WEBP') {
+          swal("File is not in correct format", "", "error", {
             buttons: false,
             timer: 1500,
           });
@@ -195,48 +190,6 @@
     }
   }
 
-  function edit_image(input) {
-
-    var fi = document.getElementById('edit_category_image');
-    console.log(1)
-    // Check if any file is selected. 
-    if (fi.files.length > 0) {
-      for (var i = 0; i <= fi.files.length - 1; i++) {
-        var name = fi.files.item(i).name;
-        var fsize = fi.files.item(i).size;
-        var file = Math.round((fsize / 1024));
-        // The size of the file. 
-        if (file >= 7048) {
-          swal("File too Big, please select a file less than 7mb", "", "error", {
-            buttons: false,
-            timer: 1500,
-          });
-          $('#edit_category_image').val(null);
-
-        } else if (name.substr(name.length - 4).toUpperCase() != '.JPG') {
-          swal("File is not in jpg format", "", "error", {
-            buttons: false,
-            timer: 1500,
-          });
-          $('#edit_category_image').val(null);
-
-        } else {
-
-          if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-              reader.readAsDataURL(input.files[0]);
-            }
-          }
-        }
-      }
-
-
-
-
-    }
-  }
   $(".edit_category").click(function() {
     $('#this_category_id').val($(this).attr('this_category_id'))
     $('#edit_name').val($(this).attr('name'))

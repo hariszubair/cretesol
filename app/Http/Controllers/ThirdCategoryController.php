@@ -91,6 +91,7 @@ class ThirdCategoryController extends Controller
     }
     public function get_third_category(Request $request)
     {
+
         return ThirdCategory::where('parent_category_id', $request->parent_id)->get();
     }
 }

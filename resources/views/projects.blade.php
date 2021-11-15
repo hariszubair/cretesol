@@ -2,12 +2,12 @@
 
 @section('content')
 <style>
-    .projects-grid.img-popup .projects-thumbnail .overlay h5 {
+    .projects-grid.img-popup .projects-link .overlay h5 {
         padding-top: 50%;
         display: block !important;
     }
 
-    .projects-grid.img-popup .projects-thumbnail .overlay {
+    .projects-grid.img-popup .projects-link .overlay {
         display: block !important;
 
     }
@@ -31,7 +31,7 @@
                             <div class="octf-col logo-col no-padding">
                                 <div id="site-logo" class="site-logo">
                                     <a href="{{URL('')}}">
-                                        <img id="main_logo" src="images/dark-logo.png" alt="Cretesol" class="">
+                                        <img id="main_logo" src="images/white-logo.png" alt="Cretesol" class="">
                                     </a>
                                 </div>
                             </div>
@@ -41,8 +41,8 @@
                                         <li id='home_link'>
                                             <a href="{{URL('/')}}">Home</a>
                                         </li>
-                                        <li class=""><a href="{{URL('about_us')}}">About Us</a>
-                                        <li id='product_link' class="menu-item-has-children"><a href="#">Products</a>
+                                        <li class=""><a href="{{URL('about_us')}}">Company</a>
+                                        <li id='product_link' class="menu-item-has-children"><a href="#">Collections</a>
                                             <ul class="sub-menu">
                                                 @foreach(\App\Models\Category::all() as $category)
                                                 <li id='tile_sub_link'><a href="{{URL('category/'.$category->slug)}}">{{$category->name}}</a></li>
@@ -52,8 +52,9 @@
                                         <li class=" current-menu-item current-menu-ancestor"><a href="{{URL('projects')}}">Projects</a>
                                         </li>
 
-                                        <li><a href="{{URL('contact_us')}}">Contact Us</a></li>
+                                        <li><a href="{{URL('contact_us')}}">Connect</a></li>
                                         <li><a href="{{URL('clients')}}">Clients</a></li>
+                                        @include('top_media_link')
 
                                     </ul>
                                 </nav>
@@ -70,7 +71,7 @@
                         <div class="mlogo_wrapper clearfix">
                             <div class="mobile_logo">
                                 <a href="{{URL('')}}">
-                                    <img id="main_logo_mobile" src="images/dark-logo.png" alt="Cretesol">
+                                    <img id="main_logo_mobile" src="images/white-logo.png" alt="Cretesol">
                                 </a>
                             </div>
                         </div>
@@ -103,9 +104,9 @@
                                             <li class=" current-menu-item current-menu-ancestor">
                                                 <a href="{{URL('')}}">Home</a>
                                             </li>
-                                            <li class=""><a href="{{URL('about_us')}}">About Us</a>
+                                            <li class=""><a href="{{URL('about_us')}}">Company</a>
                                             </li>
-                                            <li class="menu-item-has-children"><a href="#">Products</a>
+                                            <li class="menu-item-has-children"><a href="#">Collections</a>
                                                 <ul class="sub-menu">
                                                     @foreach(\App\Models\Category::all() as $category)
                                                     <li><a href="{{URL('category/'.$category->slug)}}">{{$category->name}}</a></li>
@@ -116,7 +117,7 @@
                                             <li class=""><a href="{{URL('projects')}}">Projects</a>
                                             </li>
 
-                                            <li><a href="{{URL('contact_us')}}">Contact Us</a></li>
+                                            <li><a href="{{URL('contact_us')}}">Connect</a></li>
                                             <li><a href="{{URL('clients')}}">Clients</a></li>
                                         </ul>
                                     </div>
@@ -132,12 +133,15 @@
     <div id="content" class="site-content">
         <div class="page-header dtable text-center header-transparent page-header-contact" style="background-image: url({{asset('images/header_project.jpg')}});">
             <div class="dcell">
-                <div class="container  bFont">
-                    <h1 class="page-title bFont">Projects</h1>
-                    <ul id="breadcrumbs" class="breadcrumbs none-style">
-                        <li><a href="{{URL('')}}">Home</a></li>
-                        <li class="active">Projects</li>
-                    </ul>
+                <div style="font-family:'sliderFont';background-color:black;opacity:0.75">
+
+                    <div class="container  bFont">
+                        <h1 class="page-title bFont">Projects</h1>
+                        <ul id="breadcrumbs" class="breadcrumbs none-style">
+                            <li><a href="{{URL('')}}">Home</a></li>
+                            <li class="active">Projects</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -165,26 +169,21 @@
 
                                 @foreach($projects as $project)
                                 <div class="project-item {{$project->category}} ">
-                                    <div class="projects-box">
-                                        <div class="projects-thumbnail" data-src="{{asset($project->image)}}">
-                                            <a href="portfolio-standar.html">
+                                    <div class="projects-box" style="display: table !important;">
+                                        <div class="projects-link" data-src="{{asset($project->image)}}">
+                                            <a href="project/{{$project->id}}">
                                                 <img src="{{asset($project->compressed_image)}}" alt="{{$project->name}}" style="height:370px;width:370px;object-fit:cover">
+                                                <div class="overlay">
+
+                                                    <h5>{{$project->name}}</h5>
+                                                    <p style="color: grey;">{{$project->category}}</p>
+
+                                                    <!-- <i class="ot-flaticon-add"></i> -->
+                                                </div>
                                             </a>
-                                            <div class="overlay">
 
-                                                <h5>{{$project->name}}</h5>
-                                                <p style="color: grey;">{{$project->category}}</p>
+                                        </div>
 
-                                                <!-- <i class="ot-flaticon-add"></i> -->
-                                            </div>
-                                        </div>
-                                        <div class="portfolio-info">
-                                            <div class="portfolio-info-inner">
-                                                <h5><a class="title-link" href="portfolio-detail-slider.html">Stylish Family Appartment</a></h5>
-                                                <p class="portfolio-cates"><a href="#">Interior</a></p>
-                                            </div>
-                                            <a class="overlay" href="portfolio-detail-slider.html"></a>
-                                        </div>
                                     </div>
                                 </div>
                                 @endforeach

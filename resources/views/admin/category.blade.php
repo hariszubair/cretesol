@@ -173,15 +173,15 @@
         var fsize = fi.files.item(i).size;
         var file = Math.round((fsize / 1024));
         // The size of the file. 
-        if (file >= 7048) {
-          swal("File too Big, please select a file less than 7mb", "", "error", {
+        if (file >= 2048) {
+          swal("File too Big, please select a file less than 2mb", "", "error", {
             buttons: false,
             timer: 1500,
           });
           $('#category_image').val(null);
 
         } else if (name.substr(name.length - 4).toUpperCase() != '.JPG') {
-          swal("File is not in jpg format", "", "error", {
+          swal("File is not in correct format", "", "error", {
             buttons: false,
             timer: 1500,
           });
@@ -216,15 +216,15 @@
         var fsize = fi.files.item(i).size;
         var file = Math.round((fsize / 1024));
         // The size of the file. 
-        if (file >= 7048) {
-          swal("File too Big, please select a file less than 7mb", "", "error", {
+        if (file >= 2048) {
+          swal("File too Big, please select a file less than 2mb", "", "error", {
             buttons: false,
             timer: 1500,
           });
           $('#edit_category_image').val(null);
 
         } else if (name.substr(name.length - 4).toUpperCase() != '.JPG') {
-          swal("File is not in jpg format", "", "error", {
+          swal("File is not in correct format", "", "error", {
             buttons: false,
             timer: 1500,
           });

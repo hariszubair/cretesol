@@ -36,6 +36,7 @@ Route::get('/delete_contact/{id}', [App\Http\Controllers\HomeController::class, 
 Route::get('projects', [App\Http\Controllers\HomeController::class, 'projects'])->name('projects');
 Route::get('clients', [App\Http\Controllers\HomeController::class, 'clients'])->name('clients');
 Route::get('/about_us', [App\Http\Controllers\HomeController::class, 'about_us'])->name('about_us');
+Route::get('project/{id}', [App\Http\Controllers\HomeController::class, 'project'])->name('project');
 
 
 
@@ -88,8 +89,13 @@ Route::post('/admin/add_image', [App\Http\Controllers\ProductController::class, 
 //Projects
 Route::get('admin/projects', [App\Http\Controllers\ProjectController::class, 'projects'])->name('admin.projects');
 Route::post('/admin/add_project', [App\Http\Controllers\ProjectController::class, 'add_project'])->name('admin.add_project');
-Route::post('/admin/edit_project', [App\Http\Controllers\ProjectController::class, 'edit_project'])->name('admin.edit_project');
+// Route::post('/admin/edit_project', [App\Http\Controllers\ProjectController::class, 'edit_project'])->name('admin.edit_project');
+Route::get('/admin/edit_project/{id}', [App\Http\Controllers\ProjectController::class, 'edit_project'])->name('admin.edit_project');
+Route::patch('/admin/update_project/{id}', [App\Http\Controllers\ProjectController::class, 'update_project'])->name('admin.update_project');
+
 Route::get('/admin/delete_project/{id}', [App\Http\Controllers\ProjectController::class, 'delete_project'])->name('admin.delete_project');
+Route::post('/admin/add_project_image', [App\Http\Controllers\ProjectController::class, 'add_project_image'])->name('admin.add_project_image');
+Route::delete('/admin/project/delete_image/{id}', [App\Http\Controllers\ProjectController::class, 'delete_image'])->name('admin.delete_project_image');
 
 //Clients
 Route::get('admin/clients', [App\Http\Controllers\ClientController::class, 'clients'])->name('admin.clients');

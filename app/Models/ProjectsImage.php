@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MiscImage extends Model
+class ProjectsImage extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name', 'image', 'color', 'explore', 'url'
+        'project_id',
+        'image',
+        'compressed_image'
     ];
 }

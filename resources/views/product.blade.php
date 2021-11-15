@@ -18,7 +18,7 @@
                             <div class="octf-col logo-col no-padding">
                                 <div id="site-logo" class="site-logo">
                                     <a href="{{URL('')}}">
-                                        <img id="main_logo" src="{{asset('public/images/dark-logo.png')}}" alt="Cretesol" class="">
+                                        <img id="main_logo" src="{{asset('public/images/white-logo.png')}}" alt="Cretesol" class="">
                                     </a>
                                 </div>
                             </div>
@@ -28,10 +28,10 @@
                                         <li id='home_link'>
                                             <a href="{{URL('/')}}">Home</a>
                                         </li>
-                                        <li class=""><a href="{{URL('about_us')}}">About Us</a>
+                                        <li class=""><a href="{{URL('about_us')}}">Company</a>
                                         </li>
 
-                                        <li id='product_link' class="menu-item-has-children current-menu-ancestor"><a href="#">Products</a>
+                                        <li id='product_link' class="menu-item-has-children current-menu-ancestor"><a href="#">Collections</a>
                                             <ul class="sub-menu">
                                                 @foreach(\App\Models\Category::all() as $cat)
                                                 <li class="{{$category->slug == $cat->slug ? 'current-menu-item' : ''}}" id='tile_sub_link'><a href="{{URL('category/'.$cat->slug)}}">{{$cat->name}}</a></li>
@@ -41,8 +41,9 @@
                                         <li class=""><a href="{{URL('projects')}}">Projects</a>
                                         </li>
 
-                                        <li><a href="{{URL('contact_us')}}">Contact Us</a></li>
+                                        <li><a href="{{URL('contact_us')}}">Connect</a></li>
                                         <li><a href="{{URL('clients')}}">Clients</a></li>
+                                        @include('top_media_link')
 
                                     </ul>
                                 </nav>
@@ -59,7 +60,7 @@
                         <div class="mlogo_wrapper clearfix">
                             <div class="mobile_logo">
                                 <a href="{{URL('')}}">
-                                    <img src="{{asset('public/images/dark-logo.png')}}" alt="Cretesol">
+                                    <img src="{{asset('public/images/white-logo.png')}}" alt="Cretesol">
                                 </a>
                             </div>
                         </div>
@@ -92,9 +93,9 @@
                                             <li class=" current-menu-item current-menu-ancestor">
                                                 <a href="{{URL('')}}">Home</a>
                                             </li>
-                                            <li class=""><a href="{{URL('about_us')}}">About Us</a>
+                                            <li class=""><a href="{{URL('about_us')}}">Company</a>
                                             </li>
-                                            <li class="menu-item-has-children"><a href="#">Products</a>
+                                            <li class="menu-item-has-children"><a href="#">Collections</a>
                                                 <ul class="sub-menu">
                                                     @foreach(\App\Models\Category::all() as $category)
                                                     <li><a href="{{URL('category/'.$category->slug)}}">{{$category->name}}</a></li>
@@ -106,8 +107,9 @@
                                             <li class=""><a href="{{URL('projects')}}">Projects</a>
                                             </li>
 
-                                            <li><a href="{{URL('contact_us')}}">Contact Us</a></li>
+                                            <li><a href="{{URL('contact_us')}}">Connect</a></li>
                                             <li><a href="{{URL('clients')}}">Clients</a></li>
+
                                         </ul>
                                     </div>
                                 </div>
@@ -121,21 +123,24 @@
     <div id="content" class="site-content">
         <div class="page-header dtable text-center header-transparent pheader-portfolio-detail" style="background-image: url({{URL($product->image)}});">
             <div class="dcell">
-                <div class="container" style="font-family:'sliderFont'">
-                    <h1 class="page-title" style="font-family:'sliderFont'">{{$product->name}}</h1>
-                    <ul id="breadcrumbs" class="breadcrumbs none-style">
-                        <li><a href="{{URL('')}}">Home</a></li>
-                        @if($product->category_id)
-                        <li><a href="portfolio-masonry.html">{{$product->category->name}}</a></li>
-                        @endif
-                        @if($product->sub_category_id)
-                        <li><a href="portfolio-masonry.html">{{$product->sub_category->name}}</a></li>
-                        @endif
-                        @if($product->third_category_id)
-                        <li><a href="portfolio-masonry.html">{{$product->third_category->name}}</a></li>
-                        @endif
-                        <li class="active">{{$product->name}}</li>
-                    </ul>
+                <div style="font-family:'sliderFont';background-color:black;opacity:0.75">
+
+                    <div class="container" style="font-family:'sliderFont'">
+                        <h1 class="page-title" style="font-family:'sliderFont'">{{$product->name}}</h1>
+                        <ul id="breadcrumbs" class="breadcrumbs none-style">
+                            <li><a href="{{URL('')}}">Home</a></li>
+                            @if($product->category_id)
+                            <li><a href="{{URL('category/'.$product->category->slug)}}">{{$product->category->name}}</a></li>
+                            @endif
+                            @if($product->sub_category_id)
+                            <li><a href="{{URL('sub_category/'.$product->sub_category->slug)}}">{{$product->sub_category->name}}</a></li>
+                            @endif
+                            @if($product->third_category_id)
+                            <li><a href="{{URL('third_category/'.$product->third_category->slug)}}">{{$product->third_category->name}}</a></li>
+                            @endif
+                            <li class="active">{{$product->name}}</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -153,16 +158,16 @@
                         </div>
                         <div class="space-60"></div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="width: 100%;">
                         <div class="col-md-12">
-                            <div class="row">
-                                <div class="project-bottom">
+                            <div class="" style="width: 100%;">
+                                <div class="project-bottom" style="width: 100%;">
                                     <div class="portfolio-related-posts-wrap">
                                         <div class="portfolio-related-title-wrap">
                                             <h2 class="portfolio-related-title">Related Products</h2>
                                         </div>
-                                        <div class="row">
-                                            <div class="projects-grid pf_3_cols style-1 img-scale w-auto m-0">
+                                        <div class="" style="width: 100%;">
+                                            <div class="projects-grid pf_3_cols style-1 img-scale w-auto m-0" style="width: 100%;">
                                                 @if(count($other_products) > 0)
                                                 @foreach($other_products as $product)
                                                 @if($product->first_image)
@@ -187,6 +192,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
                                                 @endif
                                                 @endforeach
                                                 @endif

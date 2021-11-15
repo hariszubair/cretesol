@@ -71,23 +71,35 @@
 
   @media (min-width: 1024px) {
     #main_logo {
-      margin-left: 95px;
+      margin-left: 105px;
     }
 
   }
 
   @font-face {
     font-family: 'navBarFont';
-    src: url("{{asset('fonts/A.otf')}}");
-    format('truetype');
+    src: url("{{asset('fonts/gotham-medium.otf')}}");
     font-style: normal;
-    font-weight: 100;
+    font-weight: 10;
+  }
+
+  @font-face {
+    font-family: 'gotham-light';
+    src: url("{{asset('fonts/gotham-light.otf')}}");
+    font-style: normal;
+    font-weight: 10;
+  }
+
+  @font-face {
+    font-family: 'gotham-medium';
+    src: url("{{asset('fonts/gotham-medium.otf')}}");
+    font-style: normal;
+    font-weight: 10;
   }
 
   @font-face {
     font-family: 'sliderFont';
-    src: url("{{asset('fonts/B.ttf')}}");
-    format('truetype');
+    src: url("{{asset('fonts/raleway_light.ttf')}}");
     font-style: normal;
     font-weight: 100;
   }
@@ -104,8 +116,16 @@
     font-family: 'navBarFont'
   }
 
+  .gMFont {
+    font-family: 'gotham-medium'
+  }
+
+  .gLFont {
+    font-family: 'gotham-light'
+  }
+
   .bFont {
-    font-family: 'sliderFont'
+    font-family: 'gotham-light'
   }
 
   #tawkchat-chat-bubble-close {

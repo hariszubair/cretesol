@@ -45,7 +45,6 @@
                 <th style="width: 5%">#</th>
                 <th class="th-sm">Name</th>
                 <th class="th-sm">Category</th>
-                <th class="th-sm">Image</th>
                 <th class="th-sm" style="width: 200px">Action</th>
               </tr>
             </thead>
@@ -55,9 +54,12 @@
                 <td>{{$key+1}}</td>
                 <td>{{$project->name}}</td>
                 <td>{{$project->category}}</td>
-                <td><img style="width:100px;height:100px;overflow: hidden; object-fit: cover;" src="{{URL($project->compressed_image)}}"></td>
                 <td>
-                  <button class="btn btn-primary edit_project" name="{{$project->name}}" category="{{$project->category}}" id="{{$project->id}}"><i class="fas fa-edit"></i></button><a href="{{URL('admin/delete_project/'.$project->id)}}" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></a>
+                  <!-- <button class="btn btn-primary edit_project" name="{{$project->name}}" category="{{$project->category}}" id="{{$project->id}}"><i class="fas fa-edit"></i></button> -->
+                  <a class="btn btn-primary" href="{{url('admin/edit_project/'.$project->id)}}"><i class="fas fa-edit"></i></a>
+
+
+                  <a href="{{URL('admin/delete_project/'.$project->id)}}" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></a>
                 </td>
               </tr>
               @endforeach
@@ -84,8 +86,12 @@
         <div class="modal-body">
           <div class="card-body">
             <div class="form-group">
-              <label for="exampleInputEmail1">Project Name</label>
+              <label>Project Name</label>
               <input type="text" class="form-control" name="name" placeholder="Project name" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Project Slug</label>
+              <input type="text" class="form-control slug" name="slug" id='project_slug' required placeholder="Enter project name">
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Project Category</label>
@@ -98,7 +104,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Project Image</label>
-              <input type="file" class="form-control" name="image" id='image' required onchange="image(this);">
+              <input type="file" class="form-control" name="project_image[]" id='project_image' required onchange="add_image(this);" multiple>
             </div>
 
           </div>
@@ -171,10 +177,9 @@
 
   });
 
-  function image(input) {
+  function add_image(input) {
 
-    var fi = document.getElementById('image');
-    console.log(1)
+    var fi = document.getElementById('project_image');
     // Check if any file is selected. 
     if (fi.files.length > 0) {
       for (var i = 0; i <= fi.files.length - 1; i++) {
@@ -182,15 +187,15 @@
         var fsize = fi.files.item(i).size;
         var file = Math.round((fsize / 1024));
         // The size of the file. 
-        if (file >= 7048) {
-          swal("File too Big, please select a file less than 7mb", "", "error", {
+        if (file >= 2048) {
+          swal("File too Big, please select a file less than 2mb", "", "error", {
             buttons: false,
             timer: 1500,
           });
           $('#image').val(null);
 
         } else if (name.substr(name.length - 4).toUpperCase() != '.JPG') {
-          swal("File is not in jpg format", "", "error", {
+          swal("File is not in correct format", "", "error", {
             buttons: false,
             timer: 1500,
           });
@@ -261,6 +266,9 @@
     $('#edit_category').val($(this).attr('category'))
     $('#project_id').val($(this).attr('id'))
     $('#edit_project').modal('show')
+  });
+  $('.slug').on('input', function(event) {
+    this.value = this.value.replace(/[^a-z\-]+/g, "");
   });
 </script>
 @endsection

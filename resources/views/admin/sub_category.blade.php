@@ -102,7 +102,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Sub Category Image</label>
-              <input type="file" class="form-control" name="sub_category_image" id='sub_category_image' required onchange="image(this);">
+              <input type="file" class="form-control" name="sub_category_image" id='sub_category_image' required onchange="add_image(this);">
             </div>
           </div>
 
@@ -180,9 +180,9 @@
 
   });
 
-  function image(input) {
+  function add_image(input) {
 
-    var fi = document.getElementById('category_image');
+    var fi = document.getElementById('sub_category_image');
     console.log(1)
     // Check if any file is selected. 
     if (fi.files.length > 0) {
@@ -191,15 +191,15 @@
         var fsize = fi.files.item(i).size;
         var file = Math.round((fsize / 1024));
         // The size of the file. 
-        if (file >= 7048) {
-          swal("File too Big, please select a file less than 7mb", "", "error", {
+        if (file >= 2048) {
+          swal("File too Big, please select a file less than 2mb", "", "error", {
             buttons: false,
             timer: 1500,
           });
           $('#category_image').val(null);
 
         } else if (name.substr(name.length - 4).toUpperCase() != '.JPG') {
-          swal("File is not in jpg format", "", "error", {
+          swal("File is not in correct format", "", "error", {
             buttons: false,
             timer: 1500,
           });
@@ -234,15 +234,15 @@
         var fsize = fi.files.item(i).size;
         var file = Math.round((fsize / 1024));
         // The size of the file. 
-        if (file >= 7048) {
-          swal("File too Big, please select a file less than 7mb", "", "error", {
+        if (file >= 2048) {
+          swal("File too Big, please select a file less than 2mb", "", "error", {
             buttons: false,
             timer: 1500,
           });
           $('#edit_category_image').val(null);
 
         } else if (name.substr(name.length - 4).toUpperCase() != '.JPG') {
-          swal("File is not in jpg format", "", "error", {
+          swal("File is not in correct format", "", "error", {
             buttons: false,
             timer: 1500,
           });
