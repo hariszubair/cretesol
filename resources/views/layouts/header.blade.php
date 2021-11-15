@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Cretesol | Tiles Stones</title>
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
-  <!-- <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet"> -->
+  <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
   <link href="{{asset('css/royal-preload.css')}}" rel="stylesheet">
   <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
   <link href="{{asset('css/flaticon.css')}}" rel="stylesheet">
@@ -20,7 +20,7 @@
   <!-- <link href="{{asset('css/magnific-popup.css')}}" rel="stylesheet"> -->
   <!-- <link href="{{asset('css/lightgallery.css')}}" rel="stylesheet"> -->
   <!-- <link href="{{asset('css/woocommerce.css')}}" rel="stylesheet"> -->
-  <!-- <link href="{{asset('css/style.css')}}" rel="stylesheet"> -->
+  <link href="{{asset('css/style.css')}}" rel="stylesheet">
   <!-- REVOLUTION SLIDER CSS -->
   <!-- <link href="{{asset('plugins/revolution/revolution/css/settings.css')}}" rel="stylesheet"> -->
 

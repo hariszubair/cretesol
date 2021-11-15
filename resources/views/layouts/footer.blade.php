@@ -255,8 +255,6 @@
 </style>
 <!-- REVOLUTION SLIDER CSS -->
 <link href="{{asset('plugins/revolution/revolution/css/settings.css')}}" rel="stylesheet">
-<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-<link href="{{asset('css/style.css')}}" rel="stylesheet">
 
 </body>
 
