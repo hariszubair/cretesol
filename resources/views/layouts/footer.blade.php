@@ -253,8 +253,6 @@
         font-family: 'gotham-light'
     }
 </style>
-<!-- REVOLUTION SLIDER CSS -->
-<link href="{{asset('plugins/revolution/revolution/css/settings.css')}}" rel="stylesheet">
 
 </body>
 

@@ -22,7 +22,7 @@
   <!-- <link href="{{asset('css/woocommerce.css')}}" rel="stylesheet"> -->
   <link href="{{asset('css/style.css')}}" rel="stylesheet">
   <!-- REVOLUTION SLIDER CSS -->
-  <!-- <link href="{{asset('plugins/revolution/revolution/css/settings.css')}}" rel="stylesheet"> -->
+  <link href="{{asset('plugins/revolution/revolution/css/settings.css')}}" rel="stylesheet">
 
   <!-- REVOLUTION NAVIGATION STYLE -->
   <link href="{{asset('plugins/revolution/revolution/css/navigation.css')}}" rel="stylesheet">
