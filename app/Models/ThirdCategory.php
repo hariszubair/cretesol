@@ -25,4 +25,8 @@ class ThirdCategory extends Model
 
         return $this->hasMany('App\Models\Product');
     }
+    public function getNameAttribute($value)
+    {
+        return strtoupper($value);
+    }
 }

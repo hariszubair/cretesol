@@ -24,4 +24,8 @@ class Category extends Model
 
         return $this->hasMany('App\Models\Product')->where('sub_category_id', '=', null)->where('third_category_id', '=', null);
     }
+    public function getNameAttribute($value)
+    {
+        return strtoupper($value);
+    }
 }

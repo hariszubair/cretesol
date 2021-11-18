@@ -8,38 +8,42 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable =[
-    	'category_id',
-    	'sub_category_id',
-    	'third_category_id',
-     	'name',
-         'slug',
-     	'image',
-         'compressed_image'
-     ];
-     public function category(){
+    protected $fillable = [
+        'category_id',
+        'sub_category_id',
+        'third_category_id',
+        'name',
+        'slug',
+        'image',
+        'compressed_image'
+    ];
+    public function category()
+    {
 
         return $this->belongsTo('App\Models\Category', 'category_id');
-
     }
-    public function sub_category(){
+    public function sub_category()
+    {
 
         return $this->belongsTo('App\Models\SubCategory', 'sub_category_id');
-
     }
-    public function third_category(){
+    public function third_category()
+    {
 
         return $this->belongsTo('App\Models\ThirdCategory', 'third_category_id');
-
     }
-    public function images(){
+    public function images()
+    {
 
         return $this->hasMany('App\Models\ProductsImage');
-
     }
-    public function first_image(){
+    public function first_image()
+    {
 
         return $this->hasOne('App\Models\ProductsImage');
-
+    }
+    public function getNameAttribute($value)
+    {
+        return strtoupper($value);
     }
 }
