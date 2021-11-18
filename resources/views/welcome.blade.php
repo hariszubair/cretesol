@@ -119,7 +119,7 @@
             <span class="g-line-vertical line-left color-line-secondary"></span>
             <span class="g-line-vertical line-right color-line-secondary"></span>
         </div>
-        <video style="height: 100%;width:100%;  object-fit: cover;" autoplay muted loop id="myVideo">
+        <video style="height: 100%;width:100%;  object-fit: cover;" autoplay muted loop id="myVideo" playsinline>
             <source src="{{asset($video->image)}}" type="video/mp4">
             Your browser does not support HTML5 video.
         </video>
