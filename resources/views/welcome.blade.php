@@ -382,7 +382,7 @@
                                 <img src="{{asset($category->compressed_image)}}" style="height: 300px;width: 100%">
                                 <div style="overflow:hidden;word-wrap: break-word;max-width:100%;position:absolute;left:50%;top:50%;transform: translate(-50%,-50%);">
                                     <a href="{{URL('category/'.$category->slug)}}" style="font-size:8px">
-                                        <h6 style="max-width:100%;  color: white;background:black;padding-left:40px;padding-right:40px;white-space: pre !important;" class="gLFont">{{$category->name}}</h6>
+                                        <h6 style="max-width:100%;  color: white;background:black;padding:5px 40px;white-space: pre !important;font-size:14px" class="gLFont">{{$category->name}}</h6>
                                     </a>
                                 </div>
                             </div>
