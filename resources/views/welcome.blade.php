@@ -151,8 +151,8 @@
                             <img src="{{asset($image->image)}}" data-bgcolor='rgba(255,255,255,0)' alt="" data-bgposition="center center" data-bgfit="cover" class="rev-slidebg" data-bgrepeat="no-repeat" data-bgparallax="off" data-no-retina>
 
                             <div style="position:absolute;color:{{$image->color}};text-align:center;width:70%;margin: 0;position: absolute;top: 50%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-                                <span style="font-size: 40px;">{{$image->name}}</span>
-                                <div class="rev-btn">
+                                <span class="slider_text">{{$image->name}}</span>
+                                <div style="padding-top: 20px;">
                                     <a style="padding:5px 36px !important" href="{{$image->url}}" class="octf-btn octf-btn-primary btn-slider "> {{$image->explore}}</a>
                                 </div>
                             </div>
@@ -347,7 +347,7 @@
                 </div>
             </div>
         </div> -->
-        <section class="services-1">
+        <section class="services-1" style="padding-top: 30px;">
             <div class="grid-lines grid-lines-vertical">
                 <span class="g-line-vertical line-left color-line-default"></span>
                 <span class="g-line-vertical line-right color-line-default"></span>
@@ -356,7 +356,7 @@
                 <div class="row">
                     <div class="col-md-12 text-center Cretesol-align-center">
                         <div class="ot-heading " style="padding-bottom:30px">
-                            <h2 class="main-heading gMFont">Collections</h2>
+                            <h2 class="main-heading gMFont">COLLECTIONS</h2>
                         </div>
                     </div>
                 </div>
@@ -367,9 +367,9 @@
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="icon-box icon-box--bg-img icon-box--icon-top icon-box--is-line-hover text-center cat" style="height: 300px;-webkit-filter: brightness(100%);padding: 0">
                                 <img src="{{asset($category->compressed_image)}}" style="height: 300px;width: 100%">
-                                <div style="position:absolute;left:50%;top:50%;transform: translate(-50%,-50%);">
+                                <div style="max-width:100%;position:absolute;left:50%;top:50%;transform: translate(-50%,-50%)">
                                     <a href="{{URL('category/'.$category->slug)}}" style="font-size:8px">
-                                        <h6 style="color: white;background:black;padding-left:40px;padding-right:40px;" class="gLFont">{{$category->name}}</h6>
+                                        <h6 style="color: white;background:black;padding-left:40px;padding-right:40px;white-space: pre;" class="gLFont">{{$category->name}}</h6>
                                     </a>
                                 </div>
                             </div>
@@ -380,9 +380,9 @@
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="icon-box icon-box--bg-img icon-box--icon-top icon-box--is-line-hover text-center cat" style="height: 300px;-webkit-filter: brightness(100%);padding: 0">
                                 <img src="{{asset($category->compressed_image)}}" style="height: 300px;width: 100%">
-                                <div style="position:absolute;left:50%;top:50%;transform: translate(-50%,-50%);">
+                                <div style="overflow:hidden;word-wrap: break-word;max-width:100%;position:absolute;left:50%;top:50%;transform: translate(-50%,-50%);">
                                     <a href="{{URL('category/'.$category->slug)}}" style="font-size:8px">
-                                        <h6 style="color: white;background:black;padding-left:40px;padding-right:40px;" class="gLFont">{{$category->name}}</h6>
+                                        <h6 style="max-width:100%;  color: white;background:black;padding-left:40px;padding-right:40px;white-space: pre !important;" class="gLFont">{{strtoupper($category->name)}}</h6>
                                     </a>
                                 </div>
                             </div>

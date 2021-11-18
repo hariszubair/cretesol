@@ -5994,6 +5994,9 @@ div.elementor-widget-heading .elementor-heading-title {
     }
 }
 @media (min-width: 768px) {
+    .slider_text{
+        font-size: 38px;line-height:1.15
+    }
     .elementor .elementor-section.elementor-section-boxed > .elementor-container {
         max-width: 750px;
     }
