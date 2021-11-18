@@ -9,7 +9,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>Cretesol | Tiles Stones</title>
+  <title>Cretesol | Stone & Tile</title>
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
   <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
   <link href="{{asset('css/royal-preload.css')}}" rel="stylesheet">
